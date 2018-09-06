@@ -1,0 +1,67 @@
+global proc string GetTarget(){
+    string $target[];
+    string $sels[] = `ls -selection`;
+    
+    $target[0] = $sels[0];
+       
+    return $target[0];
+}
+
+//GetTarget()
+
+//
+// The next procedure duplicates and randomizes the position of the pieces
+//My Randomizer script
+
+global proc string DupTarget(){
+               
+    string $obj = `GetTarget`;
+    
+    group -empty -name target_grp001;
+    parent $obj target_grp001;
+    
+    string $dups[];
+    int $counter = 0;
+    
+    int $randNum = rand (250,500);
+          
+    for($i=0; $i < $randNum; $i++){
+        duplicate -rr $obj; 
+        
+        setAttr ($obj + ".scaleX") (1);
+		setAttr ($obj + ".scaleY") (1);
+		setAttr ($obj + ".scaleZ") (1);
+                     
+        //setAttr ($obj + ".translateX") (0);
+		setAttr ($obj + ".translateY") (0);
+		//setAttr ($obj + ".translateZ") (0);
+        
+        int $randScalex = rand (1,3);
+        int $randScaley = rand (1,3);
+        int $randScalez = rand (1,3); 
+        
+        int $randMovex = rand (-10,10);
+        int $randMovey = ($randScaley);
+        int $randMovez = rand (-10,10); 
+                
+        move -r -os -wd $randMovex $randMovey $randMovez  $obj; 
+        scale -r $randScalex $randScaley $randScalez  $obj; 
+           
+        
+                 
+        $dups[$counter] = $obj;
+        $counter++;
+        select -cl;
+    }
+        $counter = 0;
+        
+        select target_grp001;
+        polyUnite -ch 1 -mergeUVSets 1 -name Main_grp001 target_grp001;
+        
+        delete -ch Main_grp001;
+                
+        return $dups[0]; 
+ 
+}
+
+DupTarget();
