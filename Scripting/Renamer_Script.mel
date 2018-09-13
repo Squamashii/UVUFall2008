@@ -1,0 +1,26 @@
+global proc Renamer(string $longString, int $startNum){
+    
+    string $Sels[] = `ls -selection`; //Puts the selected objects into an array
+    string $longName[]; //An array to separate the first and last part of the string before/after the hashes
+    tokenize $longString "#" $longName; //Separates the parameter string items into an array 
+   
+    int $num1 = size(string($longName[0])); //returns the lenth of the first string
+    int $num2 = size(string($longName[1])); //returns the length of the second string
+    int $num3 = size(string($longString));  //returns the length of the entire input string  
+    int $hashes = ($num3 - ($num2 + $num1));  //number of hashtags (subtracts the new strings from the input string)
+    int $itemNumInt = $startNum; //This is the variable that determines which number each item gets. It starts out equal to the input int
+    
+        for ($objs in $Sels) { //For each item in the $Sels array...         
+             string $itemNumString = (string($itemNumInt)); //Converts the item number to a string so..
+             int $num4 = size($itemNumString); // ..I can get the size of the string
+             int $padding = $hashes - $num4; // The padding on each item will be total hashes minus the size of the item number
+             string $zeros = ""; // A string where I am going to add each zero for the padding         
+                     for ($x = 0; $x < $padding; $x++){ //Loops as many times as the padding that I need, and adds the appropriate amount of zeros                 
+                         $zeros = $zeros + "0"; //Each zero adds a "0" to the zeros string                 
+                     }                           
+             string $newName = $longName[0] + $zeros + $itemNumInt + $longName[1]; // A new string where I concatenate all the information in this procedure
+             rename $objs $newName; //renames each object the new name
+             $itemNumInt++; // increments the item number               
+        }        
+    }
+Renamer("prefixes_name_###_suffixes", 5); 
