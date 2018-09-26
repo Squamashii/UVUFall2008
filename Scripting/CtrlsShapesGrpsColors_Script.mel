@@ -1,0 +1,90 @@
+//
+// Procedure to create different shapes for the controls
+//
+
+global proc MakeShape(string $ctrlNam, string $ctrlShape){
+         
+        if      ($ctrlShape == "square")  
+            {
+             curve -bezier -d 3 -p 0 -3 3 -p 0 -3 3 -p 0 -3 -3 -p 0 -3 -3 -p 0 -3 -3 -p 0 3 -3 -p 0 3 -3 -p 0 3 -3 -p 0 3 3 -p 0 3 3 -p 0 3 3 -p 0 -3 3 -p 0 -3 3 -k 0 -k 0 -k 0 -k 1 -k 1 -k 1 -k 2 -k 2 -k 2 -k 3 -k 3 -k 3 -k 4 -k 4 -k 4 -name ($ctrlNam + "_ctrl");   
+             bezierCurveToNurbs;
+            }
+        else if ($ctrlShape == "diamond")  
+            {
+             curve -bezier -d 3 -p 0 -3 0 -p 0 -3 0 -p 0 0 -3 -p 0 0 -3 -p 0 0 -3 -p 0 3 0 -p 0 3 0 -p 0 3 0 -p 0 0 3 -p 0 0 3 -p 0 0 3 -p 0 -3 0 -p 0 -3 0 -k 0 -k 0 -k 0 -k 1 -k 1 -k 1 -k 2 -k 2 -k 2 -k 3 -k 3 -k 3 -k 4 -k 4 -k 4 -name ($ctrlNam + "_ctrl");
+             bezierCurveToNurbs;
+            }
+        else if ($ctrlShape == "arc")  
+            {
+             curve -bezier -d 3 -p 0 0 4.109182 -p 0 0 4.109182 -p -1.425735 1.269807 3.908064 -p -1.425735 1.269807 3.908064 -p -1.425735 1.269807 3.908064 -p -1.425735 3.324399 2.415317 -p -1.425735 3.324399 2.415317 -p -1.425735 3.324399 2.415317 -p -1.425735 4.109183 0 -p -1.425735 4.109183 0 -p -1.425735 4.109183 0 -p -1.425735 3.324399 -2.415317 -p -1.425735 3.324399 -2.415317 -p -1.425735 3.324399 -2.415317 -p -1.425735 1.269807 -3.908066 -p -1.425735 1.269807 -3.908066 -p -1.425735 1.269807 -3.908066 -p 0 0 -4.109181 -p 0 0 -4.109181 -p 0 0 -4.109181 -p 1.425735 1.269807 -3.908066 -p 1.425735 1.269807 -3.908066 -p 1.425735 1.269807 -3.908066 -p 1.425735 3.324399 -2.415317 -p 1.425735 3.324399 -2.415317 -p 1.425735 3.324399 -2.415317 -p 1.425735 4.109183 0 -p 1.425735 4.109183 0 -p 1.425735 4.109183 0 -p 1.425735 3.324399 2.415317 -p 1.425735 3.324399 2.415317 -p 1.425735 3.324399 2.415317 -p 1.425735 1.269807 3.908064 -p 1.425735 1.269807 3.908064 -p 1.425735 1.269807 3.908064 -p 0 0 4.109182 -p 0 0 4.109182 -k 0 -k 0 -k 0 -k 1 -k 1 -k 1 -k 2 -k 2 -k 2 -k 3 -k 3 -k 3 -k 4 -k 4 -k 4 -k 5 -k 5 -k 5 -k 6 -k 6 -k 6 -k 7 -k 7 -k 7 -k 8 -k 8 -k 8 -k 9 -k 9 -k 9 -k 10 -k 10 -k 10 -k 11 -k 11 -k 11 -k 12 -k 12 -k 12 -name ($ctrlNam + "_ctrl");
+             bezierCurveToNurbs;
+            }    
+        else if ($ctrlShape == "pin")  
+            {               
+              curve -bezier -d 3 -p 0 0 0 -p 0 0 0 -p 0 7 0 -p 0 7 0 -p 0 7 0 -p 0 7 1 -p 0 8 1 -p 0 9 1 -p 0 9 0 -p 0 9 0 -p 0 9 0 -p 0 9 -1 -p 0 8 -1 -p 0 7 -1 -p 0 7 0 -p 0 7 0 -k 0 -k 0 -k 0 -k 1 -k 1 -k 1 -k 2 -k 2 -k 2 -k 3 -k 3 -k 3 -k 4 -k 4 -k 4 -k 5 -k 5 -k 5 -name ($ctrlNam + "_ctrl");       
+              bezierCurveToNurbs;
+            }
+         else 
+            {  
+              circle -c 0 0 0 -nr 0 0 1 -sw 360 -r 4 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1 -name ($ctrlNam + "_ctrl");
+              rotate -r -os -fo 0 90 0 ;
+              FreezeTransformations;                
+            }       
+}
+
+//
+// Create Ctrls .. Ctrl Grps .. color ctrls 
+//
+
+global proc CreateCtrl(int $color, string $ctrlShape ){
+    string $Sels[] = `ls -selection`; //Puts the selected objects into an array
+       
+    for ($objs in $Sels) {
+        MakeShape($objs, $ctrlShape);
+        
+        /*circle -c 0 0 0 -nr 0 1 0 -sw 360 -r 10 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1 -name ($objs + "_ctrl");
+        rotate -r -os -fo 0 0 -90 ;
+        FreezeTransformations;
+        */
+        
+        ColorControls(($objs + "_ctrl"), $color);
+        
+        group -empty -name ($objs + "_ctrl_grp");    
+        parent ($objs + "_ctrl") ($objs + "_ctrl_grp");        
+        
+        select -cl  ;                      // deselects everything
+        select -r ($objs + "_ctrl_grp") ;  // selects the new ctrl grp
+        select -add $objs ;                // selects the current joint
+        MatchTransform;                    // Matches all transformations
+        
+        select -cl  ;                      // deselects everything
+        select -r ($objs + "_ctrl") ;      // selects the new control
+        select -add $objs ;                // selects the current joint
+        parentConstraint -mo -weight 1;    // parent constrains them
+    }    
+}
+
+//
+// Procedure to Color the Ctrls
+//
+
+global proc ColorControls(string $ctrl, int $color){         // Sets color index of the control
+        
+        string $shapes[] = `listRelatives -shapes $ctrl`;    // define string array for shapes           
+    
+        for ($shape in $shapes){
+            
+            if (`nodeType $shape` == "nurbsCurve")           // if statement checks for nurbs curve
+            {
+                setAttr ($shape + ".overrideEnabled") 1;     // enables override on $shape
+                setAttr ($shape + ".overrideColor") $color;  // Sets $ctrl color to $color
+            } 
+            else 
+            {
+                warning ("Selected object is not a curve");  // Spits out a yellow warning
+            }            
+        }           
+}
+
+
+CreateCtrl(17, "pin");

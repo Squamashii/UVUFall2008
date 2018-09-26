@@ -1,3 +1,5 @@
+// RENAMER SCRIPT.. SPENCER BARBER
+
 global proc Renamer(string $longString, int $startNum){
     
     string $Sels[] = `ls -selection`; //Puts the selected objects into an array
@@ -23,4 +25,4 @@ global proc Renamer(string $longString, int $startNum){
              $itemNumInt++; // increments the item number               
         }        
     }
-Renamer("prefixes_name_###_suffixes", 5); 
+Renamer("Octopus_L_Leg02_##_jnt_ctrl_grp", 11);   
