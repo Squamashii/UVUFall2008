@@ -1,0 +1,35 @@
+//----   Window UI Layout for: Random Placement Generator   ----
+string $randGenWind = "RandomLocationGenerator";
+
+if (`window -exists $randGenWind`)
+deleteUI $randGenWind;
+
+$randGenWind = `window -title "Random Location Generator" $randGenWind`;
+string $randGenWindCol = `columnLayout -parent $randGenWind -adjustableColumn 1`;
+text -label "";
+string $dupQuantity = `intFieldGrp -parent $randGenWindCol -numberOfFields 1 -label "Quantity" -value1 7`;
+string $dupRanges = `floatFieldGrp -parent $randGenWindCol -numberOfFields 3 -label "Range" -value1 0.0 -value2 0.0 -value3 0.0`;
+
+string $dupButton = `button -parent $randGenWindCol -label "Generate"`;
+text -label "";
+
+showWindow $randGenWind;
+
+//--------------------------------------------------
+
+//----   Window UI Layout for: Renamer Script   ----
+string $renameWind = "RenamerScript";
+
+if (`window -exists $renameWind`)
+deleteUI $renameWind;
+
+$renameWind = `window -title "Renamer Tool" $renameWind`;
+string $renameWindCol = `columnLayout -parent $renameWind -adjustableColumn 1`;
+text -label "";
+string $renameText = `textFieldGrp -parent $renameWindCol -label "New Name" -text "name_##_drb_drb_drb"`;
+string $firstNumber = `intFieldGrp -parent $renameWindCol -numberOfFields 1 -label "First Numb in Sequence" -value1 1`;
+
+string $renameButton = `button -parent $renameWindCol -label "Generate"`;
+text -label "";
+
+showWindow $renameWind;
