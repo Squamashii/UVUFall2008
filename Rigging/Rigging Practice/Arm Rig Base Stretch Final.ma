@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: Arm Rig Base Stretch 001.ma
-//Last modified: Thu, Oct 04, 2018 11:57:06 AM
+//Name: Arm Rig Base Stretch Final.ma
+//Last modified: Thu, Oct 04, 2018 11:58:33 AM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -1253,4 +1253,4 @@ connectAttr "blendColors1.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "multiply_inverse.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "ikRPsolver.msg" ":ikSystem.sol" -na;
-// End of Arm Rig Base Stretch 001.ma
+// End of Arm Rig Base Stretch Final.ma

@@ -1,0 +1,26 @@
+//----   Window UI Layout for: Random Placement Generator   ----
+
+string $randomWindow = "RandomPlacementWindow";
+
+if (`window -exists $randomWindow`)
+    deleteUI $randomWindow;
+	
+$randomWindow = `window -title "Random Placement Generator" $randomWindow`;
+string $randomWinCol = `columnLayout -parent $randomWindow -adjustableColumn 1`;
+
+//create first row layout for number of duplicates
+string $dupsRowLayout = `rowLayout -parent $randomWinCol -numberOfColumns 2 -adjustableColumn 2`;
+text -parent $dupsRowLayout -label "Duplicates";
+string $intDuplicates = `intField -parent $dupsRowLayout -minValue 1 -value 7`;
+
+//create second row layout for range float values
+string $rangesRowLayout = `rowLayout -parent $randomWinCol -numberOfColumns 4 -adjustableColumn 2`;
+text -parent $rangesRowLayout -label "Placement Range";
+string $xRange = `floatField -parent $rangesRowLayout -value 0`;
+string $yRange = `floatField -parent $rangesRowLayout -value 0`;
+string $zRange = `floatField -parent $rangesRowLayout -value 0`;
+
+string $button = `button -parent $randomWinCol -label "generate"`;
+
+
+showWindow $randomWindow;
