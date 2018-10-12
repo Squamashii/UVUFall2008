@@ -1,0 +1,383 @@
+global proc MyToolBox(){
+
+    string $toolBoxWindow = "ToolBoxWindow";
+    
+    if (`window -exists $toolBoxWindow`)
+    deleteUI $toolBoxWindow;
+    
+    $toolBoxWindow = `window -title "Spencer's ToolBox" $toolBoxWindow`;
+    string $toolBoxMainCol = `columnLayout -parent $toolBoxWindow -columnAttach "both" 20 -rowSpacing 10 -columnWidth 300`;
+    
+    text -parent $toolBoxMainCol -label "";         
+    string $renameToolButton = `button -parent $toolBoxMainCol -label "Rename Tool" -command "RenamerTool"`;
+    string $ctrlsToolButton = `button -parent $toolBoxMainCol -label "Create Ctrls Tool" -command "CTRLGUI"`;
+    string $randomizerToolButton = `button -parent $toolBoxMainCol -label "Randomizer Tool" -command "RandomTool"`;
+    text -parent $toolBoxMainCol -label "";
+
+    showWindow $toolBoxWindow;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Random Tool Window
+global proc RandomTool(){
+
+    string $randGenWind = "RandomLocationGenerator";
+    
+    if (`window -exists $randGenWind`)
+    deleteUI $randGenWind;
+    
+    $randGenWind = `window -title "Random Location Generator" $randGenWind`;
+    string $randGenWindCol = `columnLayout -parent $randGenWind -columnAttach "both" 20 -rowSpacing 10 -columnWidth 425`;
+    
+    // Row 1 - for the int value
+    string $randIntRow = `rowLayout -parent $randGenWindCol -numberOfColumns 2`;
+    text -parent $randIntRow -label "Quantity of Duplicates" -width 120; 
+    string $dupQuantity = `intField -parent $randIntRow -value 7 -minValue 1`; 
+    
+    // Row 2 - for float fields 
+    string $randFloatRow = `rowLayout -parent $randGenWindCol -numberOfColumns 4`;
+    text -parent $randFloatRow -label "Range of Placement" -width 120; 
+    string $dupRangeX = `floatField -parent $randFloatRow -value 10.0`;
+    string $dupRangeY = `floatField -parent $randFloatRow -value 10.0`;
+    string $dupRangeZ = `floatField -parent $randFloatRow -value 10.0`;
+    
+    string $dupButton = `button -parent $randGenWindCol -label "Generate" -command ("DupValues(\"" + $dupQuantity + "\", \"" + $dupRangeX + "\", \"" + $dupRangeY + "\", \"" + $dupRangeZ + "\")")`;
+    text -parent $randGenWindCol -label "";
+    showWindow $randGenWind;
+}
+
+// Gets the Int Field Value from a window IntField
+global proc int GetIntVal(string $control){
+	int $value = `intField -q -v $control`;
+ 	return $value;
+}
+
+// Gets the Int Field Value from a window IntField
+global proc float GetFloatVal(string $control){
+	float $value = `floatField -q -v $control`;
+ 	return $value;
+}
+
+//GetTarget() Which gets the selected object(s)
+global proc string GetTarget(){
+    string $target[];
+    string $sels[] = `ls -selection`;
+    
+    $target[0] = $sels[0];
+       
+    return $target[0];
+}
+
+// The purpose of this function is to query the vlues from the window and translate them to the argument type for the DupTarget function
+global proc DupValues(string $quantityInt, string $moveX, string $moveY, string $moveZ){
+    int $quantity = `GetIntFieldVal($quantityInt)`;
+    float $moveX1 = `GetFloatVal($moveX)`;
+    float $moveY1 = `GetFloatVal($moveY)`;
+    float $moveZ1 = `GetFloatVal($moveZ)`;    
+   
+    print($moveX1 + " " + $moveY1 + " " + $moveZ1 + "\r" );
+    DupTarget($quantity, $moveX1, $moveY1, $moveZ1); 
+}
+
+
+//
+// The next procedure duplicates and randomizes the position of the pieces
+//
+
+global proc string DupTarget(int $amount, float $x01, float $y01, float $z01){
+         
+    string $obj = `GetTarget`;
+    
+    int $quantity = $amount;
+        
+    float $moveX1 = $x01;
+    float $moveY1 = $y01;
+    float $moveZ1 = $z01;       
+        
+    group -empty -name target_grp001;
+    
+    parent $obj target_grp001;
+    
+    string $dups[];
+    int $counter = 0;
+    
+    int $randNum = rand (25,10);
+          
+    for($i=0; $i < $quantity; $i++){
+        duplicate -rr $obj; 
+        
+        setAttr ($obj + ".scaleX") (1);
+		setAttr ($obj + ".scaleY") (1);
+		setAttr ($obj + ".scaleZ") (1);
+                     
+        setAttr ($obj + ".translateX") (0);
+		setAttr ($obj + ".translateY") (0);
+		setAttr ($obj + ".translateZ") (0);
+        
+        float $randScalex = rand (1,3);
+        float $randScaley = rand (1,3);
+        float $randScalez = rand (1,3); 
+        
+        float $randMovex = rand (-$moveX1,$moveX1);
+        float $randMovey = rand (-$moveY1,$moveY1);
+        float $randMovez = rand (-$moveZ1,$moveZ1); 
+        //print($moveX1 + " " + $moveY1 + " " + $moveZ1 + "\r" );
+        //print($randMovex + " " + $randMovey + " " + $randMovez);
+                
+        move -r -os -wd $randMovex $randMovey $randMovez $obj; 
+        scale -r $randScalex $randScaley $randScalez  $obj;       
+                 
+        $dups[$counter] = $obj;
+        $counter++;
+        select -cl;
+    }
+   
+    $counter = 0;
+    
+    select target_grp001;
+    polyUnite -ch 1 -mergeUVSets 1 -name Main_grp001 target_grp001;
+    
+    delete -ch Main_grp001;
+    return $dups[0];  
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+// RENAMER SCRIPT.. SPENCER BARBER
+
+// Rename Tool Window Procedure
+
+global proc RenamerTool(){
+
+    string $renameWind = "RenamerScript";
+
+    if (`window -exists $renameWind`)
+    deleteUI $renameWind;
+    
+    $renameWind = `window -title "Renamer Tool" $renameWind`;
+    //  Main Column Layout
+    string $renameWindCol = `columnLayout -parent $renameWind -columnAttach "both" 20 -rowSpacing 10 -columnWidth 318`;
+    
+    // Row 1: the new name of the item
+    string $newNameRow = `rowLayout -parent $renameWindCol -numberOfColumns 2`;
+    text -parent $newNameRow -label "New Name" -width 75;
+    string $renameText = `textField -parent $newNameRow  -placeholderText "name_##_drb_drb_drb" -width 200`;
+       
+    // Row 2: The first number in the sequence
+    string $newNumRow = `rowLayout -parent $renameWindCol -numberOfColumns 2`;
+    text -parent $newNumRow -label "First Number" -width 75;
+    string $firstNumber = `intField -parent $newNumRow -value 1 -width 200`;
+    
+    string $renameButton = `button -parent $renameWindCol -label "Generate" -command ("Renamer(\"" + $renameText + "\", \"" + $firstNumber + "\")")`;
+    text -parent $renameWindCol -label "";
+    showWindow $renameWind;
+}
+
+
+/*// Gets the Int Field Value from a window IntField
+global proc int GetIntVal(string $control){
+	int $value = `intField -q -v $control`;
+ 	return $value;
+}*/
+
+// Gets a string value from a window TextField
+global proc string GetTextVal(string $control){
+	string $value = `textField -q -text $control`;
+ 	return $value;
+}
+
+// Rename Tool Function
+global proc Renamer(string $longString, string $startNum){
+    
+    string $longStringValue = `GetTextVal($longString)`;
+    int $itemNumInt = `GetIntVal($startNum)`;
+    
+    string $Sels[] = `ls -selection`; //Puts the selected objects into an array
+    string $longName[]; //An array to separate the first and last part of the string before/after the hashes
+    tokenize $longStringValue "#" $longName; //Separates the parameter string items into an array
+   
+    int $num1 = size($longName[0]); //returns the lenth of the first string
+    int $num2 = size($longName[1]); //returns the length of the second string
+    int $num3 = size($longStringValue);  //returns the length of the entire input string
+    int $hashes = ($num3 - ($num2 + $num1));  //number of hashtags (subtracts the new strings from the input string)
+    //int $itemNumInt = $startNum; //This is the variable that determines which number each item gets. It starts out equal to the input int
+    
+        for ($objs in $Sels) { //For each item in the $Sels array...         
+             string $itemNumString = (string($itemNumInt)); //Converts the item number to a string so..
+             int $num4 = size($itemNumString); // ..I can get the size of the string
+             int $padding = $hashes - $num4; // The padding on each item will be total hashes minus the size of the item number
+             string $zeros = ""; // A string where I am going to add each zero for the padding         
+                     for ($x = 0; $x < $padding; $x++){ //Loops as many times as the padding that I need, and adds the appropriate amount of zeros                 
+                         $zeros = $zeros + "0"; //Each zero adds a "0" to the zeros string                 
+                     }                           
+             string $newName = $longName[0] + $zeros + $itemNumInt + $longName[1]; // A new string where I concatenate all the information in this procedure
+             rename $objs $newName; //renames each object the new name
+             $itemNumInt++; // increments the item number               
+        }        
+    }
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+global proc CTRLGUI(){
+        
+    string $createCtrlsWindow = "RandomLocationGenerator";
+    
+    if (`window -exists $createCtrlsWindow`)
+    deleteUI $createCtrlsWindow;
+   
+   
+    $createCtrlsWindow = `window -widthHeight 300 150 -title "Control Constraints"`; 
+
+    columnLayout -columnAttach "both" 20 -rowSpacing 10 -columnWidth 300;
+        
+    text -label "";
+    text -label "Create Controls";
+     
+    string $colorVar;
+    
+    string $ctrlColorOption = `optionMenu -label "Control Color"`;
+            menuItem -label "Green";
+            menuItem -label "Yellow";
+            menuItem -label "Red";
+            menuItem -label "Blue";
+            menuItem -label "Light Yellow";
+            menuItem -label "Black";
+            menuItem -label "White";
+            menuItem -label "Dark Blue";  
+            
+    string $ctrlShapeOption = `optionMenu -label "Control Shape"`;
+            menuItem -label "Circle";
+            menuItem -label "Diamond";
+            menuItem -label "Square";
+            menuItem -label "Arc";
+            menuItem -label "Pin";              
+            
+    button -label "EXECUTE" -command ("CreateCtrl(\"" + $ctrlColorOption + "\", \"" + $ctrlShapeOption + "\")");     
+            
+    showWindow;  
+}
+
+
+// Procedure to create different shapes for the controls
+global proc MakeShape(string $ctrlNam, string $shapeInfo){
+        
+        string $ctrlShape = `GetMenuItem($shapeInfo)`;
+        
+        switch ($ctrlShape){
+             case "Square": curve -bezier -d 3 -p 0 -3 3 -p 0 -3 3 -p 0 -3 -3 -p 0 -3 -3 -p 0 -3 -3 -p 0 3 -3 -p 0 3 -3 -p 0 3 -3 -p 0 3 3 -p 0 3 3 -p 0 3 3 -p 0 -3 3 -p 0 -3 3 -k 0 -k 0 -k 0 -k 1 -k 1 -k 1 -k 2 -k 2 -k 2 -k 3 -k 3 -k 3 -k 4 -k 4 -k 4 -name ($ctrlNam + "_ctrl");   
+             bezierCurveToNurbs; break;
+             
+             case "Diamond": curve -bezier -d 3 -p 0 -3 0 -p 0 -3 0 -p 0 0 -3 -p 0 0 -3 -p 0 0 -3 -p 0 3 0 -p 0 3 0 -p 0 3 0 -p 0 0 3 -p 0 0 3 -p 0 0 3 -p 0 -3 0 -p 0 -3 0 -k 0 -k 0 -k 0 -k 1 -k 1 -k 1 -k 2 -k 2 -k 2 -k 3 -k 3 -k 3 -k 4 -k 4 -k 4 -name ($ctrlNam + "_ctrl");
+             bezierCurveToNurbs; break;
+             
+             case "Arc": curve -bezier -d 3 -p 0 0 4.109182 -p 0 0 4.109182 -p -1.425735 1.269807 3.908064 -p -1.425735 1.269807 3.908064 -p -1.425735 1.269807 3.908064 -p -1.425735 3.324399 2.415317 -p -1.425735 3.324399 2.415317 -p -1.425735 3.324399 2.415317 -p -1.425735 4.109183 0 -p -1.425735 4.109183 0 -p -1.425735 4.109183 0 -p -1.425735 3.324399 -2.415317 -p -1.425735 3.324399 -2.415317 -p -1.425735 3.324399 -2.415317 -p -1.425735 1.269807 -3.908066 -p -1.425735 1.269807 -3.908066 -p -1.425735 1.269807 -3.908066 -p 0 0 -4.109181 -p 0 0 -4.109181 -p 0 0 -4.109181 -p 1.425735 1.269807 -3.908066 -p 1.425735 1.269807 -3.908066 -p 1.425735 1.269807 -3.908066 -p 1.425735 3.324399 -2.415317 -p 1.425735 3.324399 -2.415317 -p 1.425735 3.324399 -2.415317 -p 1.425735 4.109183 0 -p 1.425735 4.109183 0 -p 1.425735 4.109183 0 -p 1.425735 3.324399 2.415317 -p 1.425735 3.324399 2.415317 -p 1.425735 3.324399 2.415317 -p 1.425735 1.269807 3.908064 -p 1.425735 1.269807 3.908064 -p 1.425735 1.269807 3.908064 -p 0 0 4.109182 -p 0 0 4.109182 -k 0 -k 0 -k 0 -k 1 -k 1 -k 1 -k 2 -k 2 -k 2 -k 3 -k 3 -k 3 -k 4 -k 4 -k 4 -k 5 -k 5 -k 5 -k 6 -k 6 -k 6 -k 7 -k 7 -k 7 -k 8 -k 8 -k 8 -k 9 -k 9 -k 9 -k 10 -k 10 -k 10 -k 11 -k 11 -k 11 -k 12 -k 12 -k 12 -name ($ctrlNam + "_ctrl");      
+             bezierCurveToNurbs; break;
+             
+             case "Pin": curve -bezier -d 3 -p 0 0 0 -p 0 0 0 -p 0 7 0 -p 0 7 0 -p 0 7 0 -p 0 7 1 -p 0 8 1 -p 0 9 1 -p 0 9 0 -p 0 9 0 -p 0 9 0 -p 0 9 -1 -p 0 8 -1 -p 0 7 -1 -p 0 7 0 -p 0 7 0 -k 0 -k 0 -k 0 -k 1 -k 1 -k 1 -k 2 -k 2 -k 2 -k 3 -k 3 -k 3 -k 4 -k 4 -k 4 -k 5 -k 5 -k 5 -name ($ctrlNam + "_ctrl");             
+             bezierCurveToNurbs; break;
+             
+             default:  circle -c 0 0 0 -nr 0 0 1 -sw 360 -r 4 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1 -name ($ctrlNam + "_ctrl");
+             rotate -r -os -fo 0 90 0 ;
+             FreezeTransformations; break;      
+    }
+}
+
+// Create Ctrls .. Ctrl Grps .. color ctrls 
+global proc CreateCtrl(string $ctrlColor, string $ctrlShape)
+{
+    string $Sels[] = `ls -selection`; //Puts the selected objects into an array
+    
+      if (size($Sels) != 0)
+      {
+            for ($objs in $Sels) {
+                MakeShape($objs, $ctrlShape);             // Calls the MakeShape proc with selection name, and the shape string parameter                 
+                ColorControls(($objs + "_ctrl"), $ctrlColor); // Calls ColorControls proc with new shape's name, and color string parameter 
+                
+                group -empty -name ($objs + "_ctrl_grp");         // Creates an empty group    
+                parent ($objs + "_ctrl") ($objs + "_ctrl_grp");   // parents the ctrl under the grp       
+                
+                select -cl  ;                      // deselects everything
+                select -r ($objs + "_ctrl_grp") ;  // selects the new ctrl grp
+                select -add $objs ;                // selects the current joint
+                MatchTransform;                    // Matches all transformations
+                
+                select -cl  ;                      // deselects everything
+                select -r ($objs + "_ctrl") ;      // selects the new control
+                select -add $objs ;                // selects the current joint
+                parentConstraint -mo -weight 1;    // parent constrains them
+            }    
+      }
+      else
+      {          
+        group -empty -name ("temp" + "_ctrl_grp");           // Creates an empty group  
+        MakeShape("temp", $ctrlShape);                       // Calls the MakeShape proc with a temporary name, and the shape string parameter              
+        ColorControls(("temp" + "_ctrl"), $ctrlColor);           // Calls ColorControls proc with new shape's name, and color string parameter                                
+        parent ("temp" + "_ctrl") ("temp" + "_ctrl_grp");    // Parents the new shape ctrl under the group            
+        rename ("temp" + "_ctrl_grp") ("new_ctrl_grp_00");   // Renames the grp from temp to new.. so I can do this function again without naming errors              
+        rename ("temp" + "_ctrl") ("new_ctrl");              // Renames the ctrl from temp to new.. so I can do this function again without naming errors    
+      }      
+}
+
+// Get Option Menu Item
+global proc string GetMenuItem(string $control){
+	string $value = `optionMenu -q -v $control`;
+ 	return $value;
+}
+
+// Procedure to Color the Ctrls
+global proc ColorControls(string $ctrl, string $colorInfo)          // Sets color index of the control
+{               
+        string $shapes[] = `listRelatives -shapes $ctrl`;    // define string array for shapes           
+        
+        string $colorValue;
+        string $ctrlColor = `GetMenuItem($colorInfo)`; // Calls the get menu item function
+                
+        int $color;
+        
+        for ($shape in $shapes)
+        {            
+            if (`nodeType $shape` == "nurbsCurve")           // if statement checks for nurbs curve
+            {
+                setAttr ($shape + ".overrideEnabled") 1;     // enables override on $shape
+                
+                switch ($ctrlColor){
+                  case "Green"   :      $color = 14; break;  
+                  case "Yellow"  :      $color = 17; break;  
+                  case "Red"     :      $color = 13; break;   
+                  case "Blue"    :      $color = 15; break;   
+                  case "Light Yellow":  $color = 22; break;   
+                  case "Black"    :     $color = 1;  break;  
+                  case "White"   :      $color = 16; break;    
+                  default:               $color = 5;  break;
+                }                
+                
+                setAttr ($shape + ".overrideColor") $color;  // Sets $ctrl color to $color
+            } 
+            else 
+            {
+                warning ("Selected object is not a curve");  // Spits out a yellow warning
+            }            
+        }           
+}
+
+MyToolBox();
