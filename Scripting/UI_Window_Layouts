@@ -1,0 +1,72 @@
+//----   Window UI Layout for: Random Placement Generator   ----
+string $randGenWind = "RandomLocationGenerator";
+
+if (`window -exists $randGenWind`)
+deleteUI $randGenWind;
+
+$randGenWind = `window -title "Random Location Generator" $randGenWind`;
+string $randGenWindCol = `columnLayout -parent $randGenWind -columnAttach "both" 20 -rowSpacing 10 -columnWidth 425`;
+text -parent $randGenWindCol -label "";
+text -parent $randGenWindCol -label "Random Placement Generator";
+string $dupQuantity = `intFieldGrp -parent $randGenWindCol -numberOfFields 1 -label "Quantity of Duplicates" -value1 7`;
+string $dupRanges = `floatFieldGrp -parent $randGenWindCol -numberOfFields 3 -label "Range of Placement" -value1 0.0 -value2 0.0 -value3 0.0`;
+
+string $dupButton = `button -parent $randGenWindCol -label "Generate"`;
+text -parent $randGenWindCol -label "";
+showWindow $randGenWind;
+
+//----   Window UI Layout for: Renamer Script   ----
+string $renameWind = "RenamerScript";
+
+if (`window -exists $renameWind`)
+deleteUI $renameWind;
+
+$renameWind = `window -title "Renamer Tool" $renameWind`;
+string $renameWindCol = `columnLayout -parent $renameWind -columnAttach "both" 20 -rowSpacing 10 -columnWidth 500`;
+text -parent $renameWindCol -label "";
+text -parent $renameWindCol -label "Renamer";
+string $renameText = `textFieldGrp -parent $renameWindCol -label "New Name" -text "name_##_drb_drb_drb"`;
+string $firstNumber = `intFieldGrp -parent $renameWindCol -numberOfFields 1 -label "First Numb in Sequence" -value1 1`;
+
+string $renameButton = `button -parent $renameWindCol -label "Generate"`;
+text -parent $renameWindCol -label "";
+showWindow $renameWind;
+
+//---- Window UI for: Create Controls, groups, shapes, and color
+global proc CTRLGUI(){
+string $controlsWind = "CreateControls";
+
+if (`window -exists $controlsWind`)
+deleteUI $controlsWind;
+
+$controlsWind = `window -widthHeight 300 150 -title "Control Constraints"`; 
+
+    string $ctrlsCol = `columnLayout -parent $controlsWind -columnAttach "both" 20 -rowSpacing 10 -columnWidth 300`;
+        
+    text -parent $ctrlsCol -label "";
+    text -parent $ctrlsCol -label "Create Controls";
+     
+    string $colorVar;
+    
+string $ctrlColor = `optionMenu -parent $ctrlsCol -label "Control Color" ctrlColor`;
+            menuItem -parent $ctrlColor -label "Green";
+            menuItem -parent $ctrlColor -label "Yellow";
+            menuItem -parent $ctrlColor -label "Red";
+            menuItem -parent $ctrlColor -label "Blue";
+            menuItem -parent $ctrlColor -label "Light Yellow";
+            menuItem -parent $ctrlColor -label "Black";
+            menuItem -parent $ctrlColor -label "White";
+            menuItem -parent $ctrlColor -label "Dark Blue";  
+            
+string $ctrlShape = `optionMenu -parent $ctrlsCol -label "Control Shape" ctrlShape`;
+            menuItem -parent $ctrlShape -label "Circle";
+            menuItem -parent $ctrlShape -label "Diamond";
+            menuItem -parent $ctrlShape -label "Square";
+            menuItem -parent $ctrlShape -label "Arc";
+            menuItem -parent $ctrlShape -label "Pin";              
+            
+    button -parent $ctrlsCol -label "EXECUTE" -command "CreateCtrl";     
+            
+    showWindow $controlsWind;  
+}
+CTRLGUI();

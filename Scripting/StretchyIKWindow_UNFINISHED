@@ -1,0 +1,82 @@
+//WINDOW for input of joints for the IK chain
+global proc StretchyIK(){
+   
+    string $stretchyWindow = "CreateStretchyIK"; //setting up the name of the window in a string variable
+    
+    if (`window -exists $stretchyWindow`){ //Checks if the window already exists
+    deleteUI $stretchyWindow;}             //If it does, then it deletes it
+
+    $stretchyWindow = `window -title "Create Stretchy IK" $stretchyWindow`; //Sets the string name of the widow = to a window now
+    string $stretchyColumn = `columnLayout -parent $stretchyWindow -adjustableColumn 1 -columnAttach "both" 20 -rowSpacing 10 -columnWidth 200`;
+    
+    string $jnt01Text = `textFieldGrp -parent $stretchyColumn -adjustableColumn 2 -label "jnt01Name" -placeholderText "First joint"`;
+    string $jnt02Text = `textFieldGrp -parent $stretchyColumn -adjustableColumn 2 -label "jnt02Name" -placeholderText "Last joint"`;        
+    string $stretchIKButton = `button -parent $stretchyColumn -label "Generate Stretchy IK" 
+            -command ("CreateStretchyIK(\"" + $jnt01Text + "\", \"" + $jnt02Text + "\")")`;    
+        
+    showWindow $stretchyWindow;       
+}
+
+// Gets a string value from a text field group in a window
+global proc string GetTextFieldVal(string $control){
+	string $value = `textFieldGrp -q -text $control`;
+ 	return $value;
+}
+
+//Sets up the Stretchy IK system
+global proc CreateStretchyIK(string $jnt01Val, string $jnt02Val){
+    
+        string $jnt01 = `GetTextFieldVal($jnt01Val)`;
+        string $jnt02 = `GetTextFieldVal($jnt02Val)`;           
+        ikHandle -solver "ikRPsolver" -startJoint $jnt01 -endEffector $jnt02 -name ($jnt02 + "_stretchIkHandle");
+        
+        select -cl;
+        select $jnt01 $jnt02;
+        string $Sels[] = `ls -selection`; //Puts the selected objects into an array
+    //Adds controls and groups to the 2 joints
+           select -cl;
+           circle -c 0 0 0 -nr 0 0 1 -sw 360 -r 4 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1 -name ($jnt01 + "_Ik_Ctrl");
+           rotate -r -os -fo 0 90 0 ;
+           makeIdentity -apply true -t 0 -r 1 -s 1 -n 0 -pn 1;
+           //FreezeTransformations; 
+           select -cl;
+           group -empty -name ($jnt01 + "_Ik_Ctrl_Grp");                   // Creates an empty group  
+           parent ($jnt01 + "_Ik_Ctrl") ($jnt01 + "_Ik_Ctrl_Grp");         // parents the ctrl under the grp  
+           
+           select -r ($jnt01 + "_Ik_Ctrl_Grp") ;  // selects the new ctrl grp
+           select -add $jnt01 ; 
+           MatchTransform;                // Matches all transformations
+           parentConstraint -mo -weight 1 ($jnt01 + "_Ik_Ctrl") $jnt01;    // parent constrains them    
+                        
+           select -cl;
+           circle -c 0 0 0 -nr 0 0 1 -sw 360 -r 4 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1 -name ($jnt02 + "_IkHandle_Ctrl");
+           rotate -r -os -fo 0 90 0 ;
+           FreezeTransformations; 
+           select -cl;
+           group -empty -name ($jnt02 + "_IkHandle_Ctrl_Grp");         // Creates an empty group
+           parent ($jnt02 + "_IkHandle_Ctrl") ($jnt02 + "_IkHandle_Ctrl_Grp");   // parents the ctrl under the grp 
+           
+           select -r ($jnt02 + "_IkHandle_Ctrl_Grp") ;  // selects the new ctrl grp
+           select -add $jnt02 ; 
+           MatchTransform ($jnt02 + "_IkHandle_Ctrl_Grp") $jnt02;                    // Matches all transformations  
+           parent ($jnt02 + "_stretchIkHandle") ($jnt02 + "_IkHandle_Ctrl");                      
+                
+    //Creates 2 locators, moves them to the joints and point constrains them to the joints
+      spaceLocator -p 0 0 0 -name ($jnt01 + "_loc");
+          select -cl; select ($jnt01 + "_loc"); select -add $jnt01;
+          MatchTranslation;
+          select -cl; select ($jnt01 + "_Ik_Ctrl_Grp"); select -add ($jnt01 + "_loc");
+          pointConstraint -offset 0 0 0 -weight 1;
+      spaceLocator -p 0 0 0 -name ($jnt02 + "_loc");
+          select -cl; select ($jnt02 + "_loc"); select -add $jnt02;
+          MatchTranslation;
+          select -cl; select ($jnt02 + "_IkHandle_Ctrl"); select -add ($jnt02 + "_loc");
+          pointConstraint -offset 0 0 0 -weight 1;
+    // Creates a distanceBetween node and then plugs the world positions of the 2 locators into point1 and point2
+          shadingNode -asUtility distanceBetween -name ($jnt02 + "_locsDistance_DB");
+          connectAttr -f ($jnt01 + "_loc" + "Shape").worldPosition[0] ($jnt02 + "_locsDistance_DB").point1;
+          connectAttr -f ($jnt02 + "_loc" + "Shape").worldPosition[0] ($jnt02 + "_locsDistance_DB").point2;
+    
+}
+
+StretchyIK();
