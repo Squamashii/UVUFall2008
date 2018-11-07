@@ -81,7 +81,25 @@ MakeShape("CtrlName", "Circle")
 #             bezierCurveToNurbs; break;
 #             
 
+#------------------------------------------- RandomDups(amount, rangeX, rangeY, rangeZ) = Function to duplicate the target and randomly place it around
 
+def RandomDups(amount=28, rangeX=8, rangeY=0, rangeZ=8):
+    obj = cmds.ls(sl=True)[0]
+    cmds.select(cl=True)
+    target_grp001 = cmds.group(empty=True, name='target_grp001')
+    cmds.parent(obj, target_grp001)
+
+    for x in range(0, amount):
+        cmds.duplicate(obj, rr=True)
+        cmds.setAttr(obj + '.scaleX')
+        #cmds.setAttr((obj +'.rotate'), 0, 0, 0, type="double3")
+        #cmds.setAttr((obj +'.translate'), 0, 0, 0, type="double3")
+        randX = random.uniform(-1*rangeX,rangeX)
+        randY = random.uniform(-1*rangeY,rangeY)
+        randZ = random.uniform(-1*rangeZ,rangeZ)
+        cmds.move(randX,randY,randZ,obj,r=True)
+
+RandomDups()
 
 
 
