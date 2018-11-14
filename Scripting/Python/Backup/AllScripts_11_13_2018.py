@@ -10,34 +10,24 @@ import sys
 #if 'C:/Users/...full path to my scripts folder' not in sys.path:
 #    sys.path.append('C:/Users/...full path to my scripts folder')
 #-------------------------------------------- Function to create locators based on a selection   
-def CreateLoc(option=1):
+def CreateLoc(option=1, locName='locator'):
    
     sels = cmds.ls(sl=True)    #Adds all selected objects to a list called "sels"
     
     if option is 1:    
-        dups = cmds.duplicate(sels, rr=True) #Duplicates everything in our selection, and calls it "dups"
-        dups = cmds.polyUnite(dups, ch=True, mergeUVSets=True, centerPivot=True)[0] # Add the list item to the end of the line
-        
-        bbox = cmds.xform(dups, boundingBox=True, q=True) # bb=True
+        bbox = cmds.exactWorldBoundingBox(sels)
         pivot = [(bbox[0]+bbox[3])/2,(bbox[1]+bbox[4])/2,(bbox[2]+bbox[5])/2]
-        
-        cmds.delete(dups, ch=True)
-        cmds.delete(dups)
-        
-        loc = cmds.spaceLocator()[0]
+                
+        loc = cmds.spaceLocator(name=locName)[0]
         cmds.xform(loc, translation=pivot, worldSpace=True) 
     
     elif option is 2: # Finds the pivot and adds a locator to each one
         for sel in sels:
             pivot = cmds.xform(sel, q=True, rp=True, worldSpace=True)
-            loc = cmds.spaceLocator()[0]
-            cmds.xform(loc, translation=pivot, worldSpace=True)
-    
-#    else:
-#        for sel in sels:
-                
-    
-#CreateLoc(2)
+            loc = cmds.spaceLocator(name=locName)[0]
+            cmds.xform(loc, translation=pivot, worldSpace=True)    
+
+#CreateLoc()
 #----------------------------------------- LocJoints() = Function to Create a joint chain based on a series of selected locators
 def LocJoints():
     sels = cmds.ls(sl=True)
@@ -122,35 +112,6 @@ def BrokenFKSetup():
     cmds.connectAttr(newConstraints[0] + '.followRotate', newConstraints[2] + '.' + sels[0] + 'W0')
 
 #BrokenFKSetup()
-#------------------- FKIKSwitch() Creates 2 more joint chains and a switch on a chosen ctrl
-def FKIKSwitch(ctrlName='jointChain'):
-    sels = cmds.ls(sl=True)
-    cmds.select(sels[0])
-    switchAttr = cmds.addAttr(shortName=(ctrlName + 'FKIK'), longName=(ctrlName + 'FKIK'), k=True, minValue=0.0, maxValue=1.0, defaultValue=0.0)
-    jointCount = (len(sels)-1) #Says how many joints are selected (all selected - the transform ctrl)
-    
-    fkChain = cmds.duplicate(sels[1], rc=True)  #duplicates the joint chain for an FK chain and gives children unique names   
-    ikChain = cmds.duplicate(sels[1], rc=True)  #duplicates the joint chain for an FK chain and gives children unique names  
-        
-    count = 1      
-    for x in range(0, jointCount):        
-        cmds.parentConstraint(fkChain[count-1], sels[count], mo=True, w=1.0)
-        cmds.parentConstraint(ikChain[count-1], sels[count], mo=True, w=0.0)
-        cmds.setDrivenKeyframe(sels[count] + '_parentConstraint1.' + fkChain[count-1] + 'W0', cd=(sels[0] + '.' + ctrlName + 'FKIK'), dv=0, v=1)
-        cmds.setDrivenKeyframe(sels[count] + '_parentConstraint1.' + fkChain[count-1] + 'W0', cd=(sels[0] + '.' + ctrlName + 'FKIK'), dv=1, v=0)        
-        cmds.setDrivenKeyframe(sels[count] + '_parentConstraint1.' + ikChain[count-1] + 'W1', cd=(sels[0] + '.' + ctrlName + 'FKIK'), dv=0, v=0)
-        cmds.setDrivenKeyframe(sels[count] + '_parentConstraint1.' + ikChain[count-1] + 'W1', cd=(sels[0] + '.' + ctrlName + 'FKIK'), dv=1, v=1)        
-        count += 1  
-    
-    count = 1    
-    for jnt in fkChain: 
-        cmds.rename(jnt, 'FK_' + sels[count])
-        count += 1
-        
-    count = 1    
-    for jnt in ikChain:
-        cmds.rename(jnt, 'IK_' + sels[count])
-        count += 1    
 
 # ----- select(ctrl, jnt, jnt, jnt, jntm etc) --- FKIKSwitch() Creates 2 more joint chains and a switch on a chosen ctrl
 def FKIKSwitch(ctrlName='jointChain'):
@@ -189,19 +150,66 @@ def FKIKSwitch(ctrlName='jointChain'):
         count += 1
 
 
-FKIKSwitch()
+#FKIKSwitch()
 
 #---------------StretchyIK(TransformCtrl, IKCtrl, jnt1, jntEnd)  
-def StretchyIK():
+def StretchyIK(ctrlName='stretchy'):
     sels = cmds.ls(sl=True)
+    
     print sels
     
-    cmds.select(sels[0])
+    cmds.select(sels[0]) # Add 3 attributes to the Transform CTRL
     Length01 = cmds.addAttr(shortName=(ctrlName + 'Len1'), longName=(ctrlName + 'Len1'), k=True, minValue=0.0, defaultValue=1.0) 
     Length02 = cmds.addAttr(shortName=(ctrlName + 'Len2'), longName=(ctrlName + 'Len2'), k=True, minValue=0.0, defaultValue=1.0) 
     Stretch = cmds.addAttr(shortName=(ctrlName + 'Str'), longName=(ctrlName + 'Str'), k=True, minValue=0.0, maxValue=1.0, defaultValue=1.0) 
     
+    cmds.select(sels[2])
+    naming = ctrlName + '_loc01'
+    loc01 = CreateLoc(2, naming)[0]
+    
+    cmds.select(sels[-1])
+    naming = ctrlName + '_loc02'
+    loc02 = CreateLoc(2, naming)[0]
+     
+    cmds.ikHandle(name='stretchyIKHandle', sj=sels[2], ee=sels[3], solver='ikRPsolver')
+    
+    #-- Now that we have all of the pieces, lets set up the nodes   
+    
+    cmds.createNode('distanceBetween')
+    cmds.createNode('condition')
+    cmds.createNode('plusMinusAverage')
+    cmds.createNode('multiplyDivide')
+    cmds.createNode('multiplyDivide')
+    cmds.createNode('multiplyDivide')
+    cmds.createNode('multiplyDivide')
+    cmds.createNode('multiplyDivide')
+    cmds.createNode('multiplyDivide')
+    
+    #
+        
+    print (loc01[0], loc02[0])
+    
+    
 StretchyIK()
+#---
+#---
+#---
+#---
+#---
+#---
+#---
+#---
+#---
+#---
+#---
+#---
+#---
+#---
+#---
+#---
+#---
+#---
+#---
 #-----------------------------------------------------------------------------------------
 #-------------- Window Maker Function
 def ToolBagWindow():
@@ -213,23 +221,28 @@ def ToolBagWindow():
         cmds.deleteUI(tbWin)
     
     tbWin = cmds.window(tbWin, title='Tool Bag')
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+    tbCol = cmds.columnLayout(parent=tbWin, adjustableColumn=True)
+    #dropCtrl = cmds.optionMenu(parent=tbCol, label='Type')
+    #cmds.menuItem(parent=dropCtrl, label='BoundindBox')
+    #cmds.menuItem(parent=dropCtrl, label='PivotPoint')
+    #cmds.button(parent=tbCol, label='CreateLocator')
+    cmds.text(parent=tbCol, label='Locator Type:')
+    cmds.button(parent=tbCol, label='Bounding Box', command=lambda x: CreateLoc(1))
+    cmds.button(parent=tbCol, label='Pivot Point', command=lambda y: CreateLoc(2))
+    
+    cmds.showWindow(tbWin)
+    
+ToolBagWindow()
+
+
+
+
+
+
+
+
+
+
+
+
+

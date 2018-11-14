@@ -173,6 +173,88 @@ def FKIKSwitch(ctrlName='jointChain'):
 
 FKIKSwitch()
 
+# ---------------StretchyIK(TransformCtrl, IKCtrl, jnt1, jntEnd)
+def StretchyIK(ctrlName='stretchy'):
+    sels = cmds.ls(sl=True)
+
+    print sels
+
+    cmds.select(sels[0])  # Add 3 attributes to the Transform CTRL
+    Length01 = cmds.addAttr(shortName=(ctrlName + 'Len1'), longName=(ctrlName + 'Len1'), k=True, minValue=0.0,
+                            defaultValue=1.0)
+    Length02 = cmds.addAttr(shortName=(ctrlName + 'Len2'), longName=(ctrlName + 'Len2'), k=True, minValue=0.0,
+                            defaultValue=1.0)
+    Stretch = cmds.addAttr(shortName=(ctrlName + 'Str'), longName=(ctrlName + 'Str'), k=True, minValue=0.0,
+                           maxValue=1.0, defaultValue=1.0)
+
+    cmds.select(sels[2])
+    naming = ctrlName + '_loc01'
+    loc01 = CreateLoc(2, naming)[0]
+
+    cmds.select(sels[-1])
+    naming = ctrlName + '_loc02'
+    loc02 = CreateLoc(2, naming)[0]
+
+    cmds.ikHandle(name='stretchyIKHandle', sj=sels[2], ee=sels[3], solver='ikRPsolver')
+
+    # -- Now that we have al of the pieces, lets set up the nodes
+
+
+
+    print (loc01[0], loc02[0])
+
+
+StretchyIK()
+
+
+# ---
+# ---
+# ---
+# ---
+# ---
+# ---
+# ---
+# ---
+# ---
+# ---
+# ---
+# ---
+# ---
+# ---
+# ---
+# ---
+# ---
+# ---
+# ---
+# -----------------------------------------------------------------------------------------
+# -------------- Window Maker Function
+def ToolBagWindow():
+    '''Create a window to access all of my tools'''
+
+    tbWin = "LockWindow"
+
+    if cmds.window(tbWin, exists=True):
+        cmds.deleteUI(tbWin)
+
+    tbWin = cmds.window(tbWin, title='Tool Bag')
+    tbCol = cmds.columnLayout(parent=tbWin, adjustableColumn=True)
+    # dropCtrl = cmds.optionMenu(parent=tbCol, label='Type')
+    # cmds.menuItem(parent=dropCtrl, label='BoundindBox')
+    # cmds.menuItem(parent=dropCtrl, label='PivotPoint')
+    # cmds.button(parent=tbCol, label='CreateLocator')
+    cmds.text(parent=tbCol, label='Locator Type:')
+    cmds.button(parent=tbCol, label='Bounding Box', command=lambda x: CreateLoc(1))
+    cmds.button(parent=tbCol, label='Pivot Point', command=lambda y: CreateLoc(2))
+
+    cmds.showWindow(tbWin)
+
+
+ToolBagWindow()
+
+
+
+
+
 
 
 
