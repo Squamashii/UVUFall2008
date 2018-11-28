@@ -1,0 +1,10 @@
+entagma
+
+Houdini learning paths
+
+education@sideFX.com - To send future projects to be seen by ther team!
+
+The Houdini foundations book
+
+The five, "swiss army knives" nodes of Houdini
+Merge, creatAttr,  
