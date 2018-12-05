@@ -1,11 +1,6 @@
 import maya.cmds as cmds
 import random as random
-# -------------------------------------------- To Add my custom scripts folder
-import sys
 
-
-# if 'C:/Users/...full path to my scripts folder' not in sys.path:
-#    sys.path.append('C:/Users/...full path to my scripts folder')
 # -------------------------------------------- Function to create locators based on a selection
 def CreateLoc(option=1):
     sels = cmds.ls(sl=True)  # Adds all selected objects to a list called "sels"
