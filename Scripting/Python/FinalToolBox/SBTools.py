@@ -6,13 +6,14 @@ class ToolBox():
         self.mWin = "sbToolBox"
 
     def create(self):
-        self.mWin = cmds.window(self.mWin, title='sbToolBox')
+        self.mWin = cmds.window(self.mWin, title='sbToolBox', tlb=True)
         self.mCol = cmds.columnLayout(parent=self.mWin, adjustableColumn=True)
         cmds.button(parent=self.mCol, label='Renamer Tool', command=lambda x: self.renameWin())
         cmds.button(parent=self.mCol, label='Randomizer Tool', command=lambda x: self.randomWin())
         cmds.button(parent=self.mCol, label='Locator Tool', command=lambda x: self.locatorWin())
         cmds.button(parent=self.mCol, label='Locator Joints Tool', command=lambda x: self.LocJointsWin())
         cmds.button(parent=self.mCol, label='Controls Tool', command=lambda x: self.ControlsWin())
+        cmds.button(parent=self.mCol, label='FKIK Switch Tool', command=lambda x: self.FKIKSwitchWin())
 
         cmds.showWindow(self.mWin)
 
@@ -50,11 +51,11 @@ class ToolBox():
         makeCtrls = createCtrls.CtrlsUI()
         makeCtrls.create()
 
-# import sys
-# if 'C:/Users/10487246/ScriptsFolder' not in sys.path
-# sys.path.append ('C:/Users/10487246/ScriptsFolder')
+    def FKIKSwitchWin(self):
+        import fkikSwitchTool
+        reload(fkikSwitchTool)
+        fkikSwitch = fkikSwitchTool.FKIKUI()
+        fkikSwitch.create()
 
-#import SBTools
-#reload(toolbox)
-#toolbox.Create
+
 
