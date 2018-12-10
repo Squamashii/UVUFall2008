@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: CheetahRun_002.ma
-//Last modified: Mon, Dec 10, 2018 11:39:36 AM
+//Last modified: Sat, Dec 08, 2018 12:49:50 AM
 //Codeset: 1252
 file -rdi 1 -ns "Cheetah_Rig02_Skin03_1" -rfn "Cheetah_Rig02_Skin03_1RN" -op
 		 "v=0;" -typ "mayaAscii" "C:/Users/10487246/Spencer/UVUFall2008/Big Project/VRAnimals/Rigs/Cheetah/Maya/Rig/Cheetah_Rig02_Skin03_1.ma";
@@ -8,7 +8,6 @@ file -r -ns "Cheetah_Rig02_Skin03_1" -dr 1 -rfn "Cheetah_Rig02_Skin03_1RN" -op "
 		 -typ "mayaAscii" "C:/Users/10487246/Spencer/UVUFall2008/Big Project/VRAnimals/Rigs/Cheetah/Maya/Rig/Cheetah_Rig02_Skin03_1.ma";
 requires maya "2018";
 requires -nodeType "ikSpringSolver" "ikSpringSolver" "1.0";
-requires -nodeType "gameFbxExporter" "gameFbxExporter" "1.0";
 requires "stereoCamera" "10.0";
 requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
@@ -21,8 +20,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "E95FC414-4B1F-BE38-BCCC-46B6E04E11D0";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -21.154335275292265 8.9263233521681382 33.369512273592271 ;
-	setAttr ".r" -type "double3" -4.5383527283858873 -26.199999999998074 0 ;
+	setAttr ".t" -type "double3" 31.871346286338806 8.5152795507156878 14.510459514366479 ;
+	setAttr ".r" -type "double3" -3.938352728385671 65.400000000000631 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "AE91DE05-4779-D50F-9A14-10A73BA30DF5";
 	setAttr -k off ".v" no;
@@ -111,21 +110,21 @@ createNode imagePlane -n "imagePlaneShape1" -p "imagePlane1";
 	setAttr ".h" 3.08;
 	setAttr ".cs" -type "string" "sRGB";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "84059ACE-4F06-DEFC-10D9-2787C69C1D69";
+	rename -uid "218DBD72-41EC-C6F6-678C-3294D7057655";
 	setAttr -s 4 ".lnk";
 	setAttr -s 4 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "515C9A2F-429D-4660-D3DC-52BFAD48E56A";
+	rename -uid "5CE39A64-4A4C-A9BB-4B90-9596F0315D42";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "01AE4125-44DB-404B-D3EC-A68EBBF300CC";
+	rename -uid "5718566C-4DAE-A855-3328-2381C088FF01";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "874D598D-452E-B286-A997-AD8E2BEB9CED";
+	rename -uid "5D0AF974-45E8-7194-C5C1-E3BF3C50AF9B";
 	setAttr -s 2 ".dli[1]"  1;
 	setAttr -s 2 ".dli";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "06F49F2D-494F-08BC-1741-D2A1EB1C2D23";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "09025C58-4FAE-DDC2-68F4-F39A86006FCF";
+	rename -uid "C70666E0-4A60-F396-2D10-7C9C5295009E";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "4CD1BD49-45A4-1523-1C2F-7191A8E55355";
 	setAttr ".g" yes;
@@ -785,15 +784,15 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Cheetah_Rig02_Skin03_1RN"
 		"Cheetah_Rig02_Skin03_1RN" 0
-		"Cheetah_Rig02_Skin03_1RN" 907
-		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Geometry|Cheetah_Rig02_Skin03_1:New_CheetahMesh|Cheetah_Rig02_Skin03_1:New_CheetahMeshShape" 
-		"visibility" " -k 0 1"
+		"Cheetah_Rig02_Skin03_1RN" 891
+		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Skeleton|Cheetah_Rig02_Skin03_1:Spine_Joints|Cheetah_Rig02_Skin03_1:Spine_01_RK_Jnt|Cheetah_Rig02_Skin03_1:Spine_02_RK_Jnt|Cheetah_Rig02_Skin03_1:Spine_03_RK_Jnt|Cheetah_Rig02_Skin03_1:Spine_04_RK_Jnt|Cheetah_Rig02_Skin03_1:Spine_05_RK_Jnt|Cheetah_Rig02_Skin03_1:Spine_06_RK_Jnt" 
+		"translateX" " -av 1.4132843017578125"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Skeleton|Cheetah_Rig02_Skin03_1:Spine_Joints|Cheetah_Rig02_Skin03_1:Spine_01_RK_Jnt|Cheetah_Rig02_Skin03_1:Spine_02_RK_Jnt|Cheetah_Rig02_Skin03_1:Spine_03_RK_Jnt|Cheetah_Rig02_Skin03_1:Spine_04_RK_Jnt|Cheetah_Rig02_Skin03_1:Spine_05_RK_Jnt|Cheetah_Rig02_Skin03_1:Spine_06_RK_Jnt" 
 		"translateY" " 0"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Skeleton|Cheetah_Rig02_Skin03_1:Spine_Joints|Cheetah_Rig02_Skin03_1:Spine_01_RK_Jnt|Cheetah_Rig02_Skin03_1:Spine_02_RK_Jnt|Cheetah_Rig02_Skin03_1:Spine_03_RK_Jnt|Cheetah_Rig02_Skin03_1:Spine_04_RK_Jnt|Cheetah_Rig02_Skin03_1:Spine_05_RK_Jnt|Cheetah_Rig02_Skin03_1:Spine_06_RK_Jnt" 
 		"translateZ" " 0"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Skeleton|Cheetah_Rig02_Skin03_1:Arms_Joints|Cheetah_Rig02_Skin03_1:L_Arm_Joints|Cheetah_Rig02_Skin03_1:L_Arm_01_RK_Jnt" 
-		"rotate" " -type \"double3\" 0.26574347554317335 3.69514496094014966 -38.5034745437964645"
+		"rotate" " -type \"double3\" 0.1248201268740448 1.23547807851976099 48.79990862452081757"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Skeleton|Cheetah_Rig02_Skin03_1:Arms_Joints|Cheetah_Rig02_Skin03_1:L_Arm_Joints|Cheetah_Rig02_Skin03_1:L_Arm_01_RK_Jnt" 
 		"rotateX" " -av"
@@ -802,7 +801,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Skeleton|Cheetah_Rig02_Skin03_1:Arms_Joints|Cheetah_Rig02_Skin03_1:L_Arm_Joints|Cheetah_Rig02_Skin03_1:L_Arm_01_RK_Jnt" 
 		"rotateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Skeleton|Cheetah_Rig02_Skin03_1:Arms_Joints|Cheetah_Rig02_Skin03_1:L_Arm_Joints|Cheetah_Rig02_Skin03_1:L_Arm_01_RK_Jnt|Cheetah_Rig02_Skin03_1:L_Arm_02_RK_Jnt" 
-		"rotate" " -type \"double3\" 0 0 -7.56354526588819187"
+		"rotate" " -type \"double3\" 0 0 -5.40414449214185133"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Skeleton|Cheetah_Rig02_Skin03_1:Arms_Joints|Cheetah_Rig02_Skin03_1:L_Arm_Joints|Cheetah_Rig02_Skin03_1:L_Arm_01_RK_Jnt|Cheetah_Rig02_Skin03_1:L_Arm_02_RK_Jnt" 
 		"rotateX" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Skeleton|Cheetah_Rig02_Skin03_1:Arms_Joints|Cheetah_Rig02_Skin03_1:L_Arm_Joints|Cheetah_Rig02_Skin03_1:L_Arm_01_RK_Jnt|Cheetah_Rig02_Skin03_1:L_Arm_02_RK_Jnt" 
@@ -810,7 +809,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Skeleton|Cheetah_Rig02_Skin03_1:Arms_Joints|Cheetah_Rig02_Skin03_1:L_Arm_Joints|Cheetah_Rig02_Skin03_1:L_Arm_01_RK_Jnt|Cheetah_Rig02_Skin03_1:L_Arm_02_RK_Jnt" 
 		"rotateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Skeleton|Cheetah_Rig02_Skin03_1:Arms_Joints|Cheetah_Rig02_Skin03_1:L_Arm_Joints|Cheetah_Rig02_Skin03_1:L_Paw|Cheetah_Rig02_Skin03_1:IK_L_Paw_01_jnt" 
-		"translate" " -type \"double3\" 1.13504456351730965 4.01450419995925678 1.5635679353775862"
+		"translate" " -type \"double3\" 1.13504456351731009 4.01450419995925678 1.5635679353775862"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Skeleton|Cheetah_Rig02_Skin03_1:Arms_Joints|Cheetah_Rig02_Skin03_1:L_Arm_Joints|Cheetah_Rig02_Skin03_1:L_Paw|Cheetah_Rig02_Skin03_1:IK_L_Paw_01_jnt" 
 		"translateX" " -av"
@@ -819,7 +818,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Skeleton|Cheetah_Rig02_Skin03_1:Arms_Joints|Cheetah_Rig02_Skin03_1:L_Arm_Joints|Cheetah_Rig02_Skin03_1:L_Paw|Cheetah_Rig02_Skin03_1:IK_L_Paw_01_jnt" 
 		"translateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Skeleton|Cheetah_Rig02_Skin03_1:Arms_Joints|Cheetah_Rig02_Skin03_1:L_Arm_Joints|Cheetah_Rig02_Skin03_1:L_Paw|Cheetah_Rig02_Skin03_1:IK_L_Paw_01_jnt" 
-		"rotate" " -type \"double3\" -0.37102654145767144 -11.90661442150979177 75.39154528278500322"
+		"rotate" " -type \"double3\" -0.37102654145768427 -11.90661442150977578 75.39154528278498901"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Skeleton|Cheetah_Rig02_Skin03_1:Arms_Joints|Cheetah_Rig02_Skin03_1:L_Arm_Joints|Cheetah_Rig02_Skin03_1:L_Paw|Cheetah_Rig02_Skin03_1:IK_L_Paw_01_jnt" 
 		"rotateX" " -av"
@@ -830,7 +829,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Skeleton|Cheetah_Rig02_Skin03_1:Arms_Joints|Cheetah_Rig02_Skin03_1:L_Arm_Joints|Cheetah_Rig02_Skin03_1:L_Paw|Cheetah_Rig02_Skin03_1:IK_L_Paw_01_jnt|Cheetah_Rig02_Skin03_1:IK_L_Paw_02_jnt|Cheetah_Rig02_Skin03_1:IK_L_Paw_03_jnt" 
 		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Skeleton|Cheetah_Rig02_Skin03_1:Arms_Joints|Cheetah_Rig02_Skin03_1:R_Arm_Joints|Cheetah_Rig02_Skin03_1:R_Arm_01_RK_Jnt" 
-		"rotate" " -type \"double3\" -5.86308646427361335 2.10931440647700885 -164.57368969434097039"
+		"rotate" " -type \"double3\" -12.0198918952829068 6.22260435047732496 -121.28500459873517059"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Skeleton|Cheetah_Rig02_Skin03_1:Arms_Joints|Cheetah_Rig02_Skin03_1:R_Arm_Joints|Cheetah_Rig02_Skin03_1:R_Arm_01_RK_Jnt" 
 		"rotateX" " -av"
@@ -839,7 +838,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Skeleton|Cheetah_Rig02_Skin03_1:Arms_Joints|Cheetah_Rig02_Skin03_1:R_Arm_Joints|Cheetah_Rig02_Skin03_1:R_Arm_01_RK_Jnt" 
 		"rotateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Skeleton|Cheetah_Rig02_Skin03_1:Arms_Joints|Cheetah_Rig02_Skin03_1:R_Arm_Joints|Cheetah_Rig02_Skin03_1:R_Shoulder_jnt_grp|Cheetah_Rig02_Skin03_1:R_Shoulder_01_RK_Jnt" 
-		"rotate" " -type \"double3\" -128.3162757943096608 -7.99509713890133078 -3.58419878683244209"
+		"rotate" " -type \"double3\" -143.09609861976582579 -4.87942468933636153 41.8909286906343965"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Skeleton|Cheetah_Rig02_Skin03_1:Arms_Joints|Cheetah_Rig02_Skin03_1:R_Arm_Joints|Cheetah_Rig02_Skin03_1:R_Shoulder_jnt_grp|Cheetah_Rig02_Skin03_1:R_Shoulder_01_RK_Jnt" 
 		"rotateX" " -av"
@@ -850,7 +849,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Skeleton|Cheetah_Rig02_Skin03_1:Arms_Joints|Cheetah_Rig02_Skin03_1:R_Arm_Joints|Cheetah_Rig02_Skin03_1:RK_Paw_Joints|Cheetah_Rig02_Skin03_1:RK_R_Paw_01_jnt" 
 		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Skeleton|Cheetah_Rig02_Skin03_1:Legs_Joints|Cheetah_Rig02_Skin03_1:L_Leg_Joints|Cheetah_Rig02_Skin03_1:RK_L_Leg_01_jnt|Cheetah_Rig02_Skin03_1:RK_L_Leg_02_jnt" 
-		"translate" " -type \"double3\" 3.02092669671282721 0 0"
+		"translate" " -type \"double3\" 3.0209266967128281 0 0"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Skeleton|Cheetah_Rig02_Skin03_1:Legs_Joints|Cheetah_Rig02_Skin03_1:L_Leg_Joints|Cheetah_Rig02_Skin03_1:RK_L_Leg_01_jnt|Cheetah_Rig02_Skin03_1:RK_L_Leg_02_jnt" 
 		"translateX" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Skeleton|Cheetah_Rig02_Skin03_1:Legs_Joints|Cheetah_Rig02_Skin03_1:L_Leg_Joints|Cheetah_Rig02_Skin03_1:RK_L_Leg_01_jnt|Cheetah_Rig02_Skin03_1:RK_L_Leg_02_jnt" 
@@ -858,7 +857,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Skeleton|Cheetah_Rig02_Skin03_1:Legs_Joints|Cheetah_Rig02_Skin03_1:L_Leg_Joints|Cheetah_Rig02_Skin03_1:RK_L_Leg_01_jnt|Cheetah_Rig02_Skin03_1:RK_L_Leg_02_jnt" 
 		"translateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Spine_01_ctrl_jnt_ctrl_grp3|Cheetah_Rig02_Skin03_1:Spine_01_ctrl_jnt_ctrl" 
-		"translate" " -type \"double3\" 0.062233028650383784 -0.47270678331849414 0"
+		"translate" " -type \"double3\" 0.12081095805876965 -0.91765033153716635 0"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Spine_01_ctrl_jnt_ctrl_grp3|Cheetah_Rig02_Skin03_1:Spine_01_ctrl_jnt_ctrl" 
 		"translateX" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Spine_01_ctrl_jnt_ctrl_grp3|Cheetah_Rig02_Skin03_1:Spine_01_ctrl_jnt_ctrl" 
@@ -866,11 +865,11 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Spine_01_ctrl_jnt_ctrl_grp3|Cheetah_Rig02_Skin03_1:Spine_01_ctrl_jnt_ctrl" 
 		"translateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Spine_01_ctrl_jnt_ctrl_grp3|Cheetah_Rig02_Skin03_1:Spine_01_ctrl_jnt_ctrl" 
-		"rotate" " -type \"double3\" 0 0 11.97626650768185108"
+		"rotate" " -type \"double3\" 0 0 5.98813325384092021"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Spine_01_ctrl_jnt_ctrl_grp3|Cheetah_Rig02_Skin03_1:Spine_01_ctrl_jnt_ctrl" 
 		"rotateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Spine_01_ctrl_jnt_ctrl_grp1|Cheetah_Rig02_Skin03_1:Spine_01_ctrl_jnt_ctrl" 
-		"translate" " -type \"double3\" -0.42838747014821316 -0.31948682622064534 0"
+		"translate" " -type \"double3\" -0.14650405477879891 -0.83958135535492218 0"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Spine_01_ctrl_jnt_ctrl_grp1|Cheetah_Rig02_Skin03_1:Spine_01_ctrl_jnt_ctrl" 
 		"translateX" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Spine_01_ctrl_jnt_ctrl_grp1|Cheetah_Rig02_Skin03_1:Spine_01_ctrl_jnt_ctrl" 
@@ -878,7 +877,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Spine_01_ctrl_jnt_ctrl_grp1|Cheetah_Rig02_Skin03_1:Spine_01_ctrl_jnt_ctrl" 
 		"translateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Spine_01_ctrl_jnt_ctrl_grp1|Cheetah_Rig02_Skin03_1:Spine_01_ctrl_jnt_ctrl" 
-		"rotate" " -type \"double3\" -0.59842093819016051 -1.32963007866591187 2.57768770410750436"
+		"rotate" " -type \"double3\" -13.76552582559946103 3.85332370680279723 -7.0944327543575092"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Spine_01_ctrl_jnt_ctrl_grp1|Cheetah_Rig02_Skin03_1:Spine_01_ctrl_jnt_ctrl" 
 		"rotateX" " -av"
@@ -887,7 +886,8 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Spine_01_ctrl_jnt_ctrl_grp1|Cheetah_Rig02_Skin03_1:Spine_01_ctrl_jnt_ctrl" 
 		"rotateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Neck_01_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Neck_01_bn_jnt_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
+		"translate" " -type \"double3\" 0.025095337931752133 0.30107491496287664 -5.5278181378785723e-10"
+		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Neck_01_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Neck_01_bn_jnt_ctrl" 
 		"translateX" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Neck_01_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Neck_01_bn_jnt_ctrl" 
@@ -895,7 +895,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Neck_01_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Neck_01_bn_jnt_ctrl" 
 		"translateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Neck_01_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Neck_01_bn_jnt_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"rotate" " -type \"double3\" 0 0 -15.07904171545238192"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Neck_01_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Neck_01_bn_jnt_ctrl" 
 		"rotateX" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Neck_01_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Neck_01_bn_jnt_ctrl" 
@@ -911,11 +911,11 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Neck_02_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Neck_02_bn_jnt_ctrl" 
 		"translateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Tail_ctrl_01_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Tail_ctrl_01_jnt_ctrl" 
-		"rotate" " -type \"double3\" 0 0 18.48603759968969484"
+		"rotate" " -type \"double3\" 0 0 11.56382224528918634"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Tail_ctrl_01_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Tail_ctrl_01_jnt_ctrl" 
 		"rotateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Tail_ctrl_02_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Tail_ctrl_02_jnt_ctrl" 
-		"translate" " -type \"double3\" 0.1074558705372082 -0.35249390306982153 -0.28104481433734346"
+		"translate" " -type \"double3\" -0.5062484742664185 -0.81190132698621909 -0.13293802217513828"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Tail_ctrl_02_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Tail_ctrl_02_jnt_ctrl" 
 		"translateX" " -av"
@@ -924,7 +924,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Tail_ctrl_02_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Tail_ctrl_02_jnt_ctrl" 
 		"translateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Tail_ctrl_02_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Tail_ctrl_02_jnt_ctrl" 
-		"rotate" " -type \"double3\" 5.63853952862591346 -19.06747627781975396 11.39097013154772142"
+		"rotate" " -type \"double3\" 4.84548719009895379 5.79321455117875672 23.72945696561497542"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Tail_ctrl_02_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Tail_ctrl_02_jnt_ctrl" 
 		"rotateX" " -av"
@@ -935,7 +935,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Tail_ctrl_02_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Tail_ctrl_02_jnt_ctrl_grp_parentConstraint2" 
 		"Tail_ctrl_01_jnt_ctrlW0" " -k 1 0"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Tail_ctrl_03_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Tail_ctrl_03_jnt_ctrl" 
-		"translate" " -type \"double3\" -0.26098265828735706 0.30615055012019027 0.18296502302390122"
+		"translate" " -type \"double3\" -1.71225190466691335 0.65767956545007222 -0.52656900523588779"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Tail_ctrl_03_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Tail_ctrl_03_jnt_ctrl" 
 		"translateX" " -av"
@@ -944,7 +944,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Tail_ctrl_03_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Tail_ctrl_03_jnt_ctrl" 
 		"translateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Tail_ctrl_03_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Tail_ctrl_03_jnt_ctrl" 
-		"rotate" " -type \"double3\" 5.05486472087654093 -32.7850476757182534 24.383751490992843"
+		"rotate" " -type \"double3\" 23.3464596501410746 26.04274590652680743 89.40956824944353798"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Tail_ctrl_03_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Tail_ctrl_03_jnt_ctrl" 
 		"rotateX" " -av"
@@ -955,7 +955,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Tail_ctrl_03_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Tail_ctrl_03_jnt_ctrl_grp_parentConstraint2" 
 		"Tail_ctrl_02_jnt_ctrlW0" " -k 1 0"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Tail_ctrl_04_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Tail_ctrl_04_jnt_ctrl" 
-		"translate" " -type \"double3\" -0.70527697150084068 0.55363953596381354 -0.095605781580427027"
+		"translate" " -type \"double3\" -0.36896190163540465 0.03081730986437849 -0.6899805091949649"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Tail_ctrl_04_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Tail_ctrl_04_jnt_ctrl" 
 		"translateX" " -av"
@@ -964,7 +964,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Tail_ctrl_04_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Tail_ctrl_04_jnt_ctrl" 
 		"translateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Tail_ctrl_04_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Tail_ctrl_04_jnt_ctrl" 
-		"rotate" " -type \"double3\" -8.18379475497327569 -35.89852950235253104 35.80524297340950568"
+		"rotate" " -type \"double3\" 24.39636168877470368 27.44081973289926424 79.64355472561238969"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Tail_ctrl_04_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Tail_ctrl_04_jnt_ctrl" 
 		"rotateX" " -av"
@@ -975,7 +975,8 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Tail_ctrl_04_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Tail_ctrl_04_jnt_ctrl_grp_parentConstraint2" 
 		"Tail_ctrl_03_jnt_ctrlW0" " -k 1 0"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Head_00_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Head_00_bn_jnt_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
+		"translate" " -type \"double3\" 0.0013176798202724225 0.17646335687346595 -7.3033164295636426e-10"
+		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Head_00_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Head_00_bn_jnt_ctrl" 
 		"translateX" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Head_00_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Head_00_bn_jnt_ctrl" 
@@ -983,7 +984,8 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Head_00_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Head_00_bn_jnt_ctrl" 
 		"translateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Look_ctrl_grp|Cheetah_Rig02_Skin03_1:Look_Ctrl" 
-		"translate" " -type \"double3\" -1.0507256043054015e-08 2.63690234084852282 0"
+		"translate" " -type \"double3\" -1.435256604075107e-08 2.9171754858251977 -0.035034143122082653"
+		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Look_ctrl_grp|Cheetah_Rig02_Skin03_1:Look_Ctrl" 
 		"translateX" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Look_ctrl_grp|Cheetah_Rig02_Skin03_1:Look_Ctrl" 
@@ -991,7 +993,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Spine_Controls|Cheetah_Rig02_Skin03_1:Look_ctrl_grp|Cheetah_Rig02_Skin03_1:Look_Ctrl" 
 		"translateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:Shoulders_fk_ctrl_grp|Cheetah_Rig02_Skin03_1:Shoulders_fk_ctrl" 
-		"translate" " -type \"double3\" -1.37090167514662609 1.01098451005953227 0"
+		"translate" " -type \"double3\" -1.05938182030230532 0.40791609818102115 0"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:Shoulders_fk_ctrl_grp|Cheetah_Rig02_Skin03_1:Shoulders_fk_ctrl" 
 		"translateX" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:Shoulders_fk_ctrl_grp|Cheetah_Rig02_Skin03_1:Shoulders_fk_ctrl" 
@@ -999,7 +1001,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:Shoulders_fk_ctrl_grp|Cheetah_Rig02_Skin03_1:Shoulders_fk_ctrl" 
 		"translateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:Shoulders_fk_ctrl_grp|Cheetah_Rig02_Skin03_1:Shoulders_fk_ctrl" 
-		"rotate" " -type \"double3\" 0 0 17.48666930145194343"
+		"rotate" " -type \"double3\" 0 0 17.04275087590986004"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:Shoulders_fk_ctrl_grp|Cheetah_Rig02_Skin03_1:Shoulders_fk_ctrl" 
 		"rotateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:L_Arm_Controls|Cheetah_Rig02_Skin03_1:L_Arm_FK_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Arm_01_FK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Arm_01_FK_jnt_ctrl" 
@@ -1007,19 +1009,19 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:L_Arm_Controls|Cheetah_Rig02_Skin03_1:L_Arm_FK_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Arm_01_FK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Arm_01_FK_jnt_ctrl" 
 		"rotateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:L_Arm_Controls|Cheetah_Rig02_Skin03_1:L_Arm_FK_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Arm_02_FK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Arm_02_FK_jnt_ctrl" 
-		"rotate" " -type \"double3\" 0 0 -7.56354526588820519"
+		"rotate" " -type \"double3\" 0 0 -5.40414449214188863"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:L_Arm_Controls|Cheetah_Rig02_Skin03_1:L_Arm_FK_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Arm_02_FK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Arm_02_FK_jnt_ctrl" 
 		"rotateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:L_Arm_Controls|Cheetah_Rig02_Skin03_1:L_Arm_FK_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Arm_03_FK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Arm_03_FK_jnt_ctrl" 
-		"rotate" " -type \"double3\" 0 0 31.33911829283979245"
+		"rotate" " -type \"double3\" 0 0 64.1527106041434223"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:L_Arm_Controls|Cheetah_Rig02_Skin03_1:L_Arm_FK_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Arm_03_FK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Arm_03_FK_jnt_ctrl" 
 		"rotateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:L_Arm_Controls|Cheetah_Rig02_Skin03_1:L_Arm_FK_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Arm_04_FK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Arm_04_FK_jnt_ctrl" 
-		"rotate" " -type \"double3\" 0 0 16.49036619534364334"
+		"rotate" " -type \"double3\" 0 0 105.81138744754629499"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:L_Arm_Controls|Cheetah_Rig02_Skin03_1:L_Arm_FK_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Arm_04_FK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Arm_04_FK_jnt_ctrl" 
 		"rotateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:L_Arm_Controls|Cheetah_Rig02_Skin03_1:L_IK_elbow_ctrl_grp|Cheetah_Rig02_Skin03_1:L_IK_elbow_ctrl" 
-		"translate" " -type \"double3\" 1.7405067630576565 0.58069637274114472 0.47663491006993541"
+		"translate" " -type \"double3\" 2.47231074297962827 0.82485280218912771 0.67703822453115958"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:L_Arm_Controls|Cheetah_Rig02_Skin03_1:L_IK_elbow_ctrl_grp|Cheetah_Rig02_Skin03_1:L_IK_elbow_ctrl" 
 		"translateX" " -av"
@@ -1036,16 +1038,8 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		"translateY" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:L_Arm_Controls|Cheetah_Rig02_Skin03_1:L_IK_Hand_ctrls_grp1|Cheetah_Rig02_Skin03_1:L_IK_Hand_ctrl_grp|Cheetah_Rig02_Skin03_1:L_IK_Hand_ctrl" 
 		"translateZ" " -av"
-		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:L_Arm_Controls|Cheetah_Rig02_Skin03_1:L_IK_Hand_ctrls_grp1|Cheetah_Rig02_Skin03_1:L_IK_Hand_ctrl_grp|Cheetah_Rig02_Skin03_1:L_IK_Hand_ctrl|Cheetah_Rig02_Skin03_1:L_palm_ctrl_grp|Cheetah_Rig02_Skin03_1:L_palm_ctrl|Cheetah_Rig02_Skin03_1:L_fing_ctrl_grp|Cheetah_Rig02_Skin03_1:L_fing_ctrl" 
-		"rotate" " -type \"double3\" 0 0 -132.1824625906323547"
-		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:L_Arm_Controls|Cheetah_Rig02_Skin03_1:L_IK_Hand_ctrls_grp1|Cheetah_Rig02_Skin03_1:L_IK_Hand_ctrl_grp|Cheetah_Rig02_Skin03_1:L_IK_Hand_ctrl|Cheetah_Rig02_Skin03_1:L_palm_ctrl_grp|Cheetah_Rig02_Skin03_1:L_palm_ctrl|Cheetah_Rig02_Skin03_1:L_fing_ctrl_grp|Cheetah_Rig02_Skin03_1:L_fing_ctrl" 
-		"rotateZ" " -av"
-		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:L_Arm_Controls|Cheetah_Rig02_Skin03_1:L_IK_Hand_ctrls_grp1|Cheetah_Rig02_Skin03_1:L_IK_Hand_ctrl_grp|Cheetah_Rig02_Skin03_1:L_IK_Hand_ctrl|Cheetah_Rig02_Skin03_1:L_palm_ctrl_grp|Cheetah_Rig02_Skin03_1:L_palm_ctrl|Cheetah_Rig02_Skin03_1:L_fing_ctrl_grp|Cheetah_Rig02_Skin03_1:L_fing_ctrl|Cheetah_Rig02_Skin03_1:L_fingBall_ctrl_grp|Cheetah_Rig02_Skin03_1:L_fingBall_ctrl" 
-		"rotate" " -type \"double3\" 0 0 80.38825857756756932"
-		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:L_Arm_Controls|Cheetah_Rig02_Skin03_1:L_IK_Hand_ctrls_grp1|Cheetah_Rig02_Skin03_1:L_IK_Hand_ctrl_grp|Cheetah_Rig02_Skin03_1:L_IK_Hand_ctrl|Cheetah_Rig02_Skin03_1:L_palm_ctrl_grp|Cheetah_Rig02_Skin03_1:L_palm_ctrl|Cheetah_Rig02_Skin03_1:L_fing_ctrl_grp|Cheetah_Rig02_Skin03_1:L_fing_ctrl|Cheetah_Rig02_Skin03_1:L_fingBall_ctrl_grp|Cheetah_Rig02_Skin03_1:L_fingBall_ctrl" 
-		"rotateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:L_Arm_Controls|Cheetah_Rig02_Skin03_1:L_Shoulder_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Shoulder_bn_jnt_ctrl" 
-		"translate" " -type \"double3\" -0.43998003877946501 0.26559633380555725 -0.093652511662656118"
+		"translate" " -type \"double3\" -0.3116979202764375 0.67847894179566337 -0.12924094244700352"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:L_Arm_Controls|Cheetah_Rig02_Skin03_1:L_Shoulder_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Shoulder_bn_jnt_ctrl" 
 		"translateX" " -av"
@@ -1054,7 +1048,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:L_Arm_Controls|Cheetah_Rig02_Skin03_1:L_Shoulder_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Shoulder_bn_jnt_ctrl" 
 		"translateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:L_Arm_Controls|Cheetah_Rig02_Skin03_1:L_Shoulder_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Shoulder_bn_jnt_ctrl" 
-		"rotate" " -type \"double3\" -37.75233710598395476 -26.71780306644518888 43.60484310317441725"
+		"rotate" " -type \"double3\" 11.27742760993065829 20.71730562148025356 -19.64870539855676412"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:L_Arm_Controls|Cheetah_Rig02_Skin03_1:L_Shoulder_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Shoulder_bn_jnt_ctrl" 
 		"rotateX" " -av"
@@ -1075,7 +1069,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:L_Arm_Controls|Cheetah_Rig02_Skin03_1:L_Arm_01_RK_Jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Arm_01_RK_Jnt_ctrl" 
 		"Paw_FKIK" " -av -k 1 0"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_Arm_FK_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_02_FK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_02_FK_jnt_ctrl" 
-		"rotate" " -type \"double3\" -0.26622810570045546 0.82733528416721813 7.18694268655877089"
+		"rotate" " -type \"double3\" -1.83713514699627356 -3.79862973510353186 -75.52155648478498051"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_Arm_FK_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_02_FK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_02_FK_jnt_ctrl" 
 		"rotateX" " -av"
@@ -1083,8 +1077,12 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		"rotateY" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_Arm_FK_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_02_FK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_02_FK_jnt_ctrl" 
 		"rotateZ" " -av"
+		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_Arm_FK_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_02_FK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_02_FK_jnt_ctrl" 
+		"followTranslate" " -k 1"
+		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_Arm_FK_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_02_FK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_02_FK_jnt_ctrl" 
+		"followRotate" " -k 1"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_Arm_FK_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_03_FK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_03_FK_jnt_ctrl" 
-		"rotate" " -type \"double3\" 2.08330914122756683 0.56501627133553733 -22.47193469282112943"
+		"rotate" " -type \"double3\" -2.68770729519764151 6.38034470681333499 110.13970196737584217"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_Arm_FK_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_03_FK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_03_FK_jnt_ctrl" 
 		"rotateX" " -av"
@@ -1092,8 +1090,12 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		"rotateY" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_Arm_FK_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_03_FK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_03_FK_jnt_ctrl" 
 		"rotateZ" " -av"
+		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_Arm_FK_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_03_FK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_03_FK_jnt_ctrl" 
+		"followTranslate" " -k 1"
+		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_Arm_FK_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_03_FK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_03_FK_jnt_ctrl" 
+		"followRotate" " -k 1"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_Arm_FK_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_04_FK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_04_FK_jnt_ctrl" 
-		"rotate" " -type \"double3\" -2.19191201742273911 2.65036236672073189 -3.49233707459756237"
+		"rotate" " -type \"double3\" -1.58501427869671585 -0.51836915437374631 -83.90914767150891862"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_Arm_FK_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_04_FK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_04_FK_jnt_ctrl" 
 		"rotateX" " -av"
@@ -1101,8 +1103,12 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		"rotateY" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_Arm_FK_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_04_FK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_04_FK_jnt_ctrl" 
 		"rotateZ" " -av"
+		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_Arm_FK_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_04_FK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_04_FK_jnt_ctrl" 
+		"followTranslate" " -k 1"
+		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_Arm_FK_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_04_FK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_04_FK_jnt_ctrl" 
+		"followRotate" " -k 1"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_IK_elbow_ctrl_grp|Cheetah_Rig02_Skin03_1:R_IK_elbow_ctrl" 
-		"translate" " -type \"double3\" 1.69242646573562139 -0.13462483250169727 -0.21815519658163812"
+		"translate" " -type \"double3\" 2.40401486610173709 -0.19122845525809293 -0.30987954059891815"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_IK_elbow_ctrl_grp|Cheetah_Rig02_Skin03_1:R_IK_elbow_ctrl" 
 		"translateX" " -av"
@@ -1111,7 +1117,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_IK_elbow_ctrl_grp|Cheetah_Rig02_Skin03_1:R_IK_elbow_ctrl" 
 		"translateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_Shoulder_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Shoulder_bn_jnt_ctrl" 
-		"translate" " -type \"double3\" -0.7458046358413325 1.0013265662942088 0.92810128665438785"
+		"translate" " -type \"double3\" 0.0078906973107665118 1.67887253794871927 -0.58857955004587925"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_Shoulder_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Shoulder_bn_jnt_ctrl" 
 		"translateX" " -av"
@@ -1120,7 +1126,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_Shoulder_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Shoulder_bn_jnt_ctrl" 
 		"translateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_Shoulder_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Shoulder_bn_jnt_ctrl" 
-		"rotate" " -type \"double3\" -4.4438390775828509 7.45190435207038337 -4.32480562730597562"
+		"rotate" " -type \"double3\" -8.28096034986402074 -30.04665270235966901 -30.74585045338995215"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_Shoulder_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Shoulder_bn_jnt_ctrl" 
 		"rotateX" " -av"
@@ -1129,7 +1135,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_Shoulder_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Shoulder_bn_jnt_ctrl" 
 		"rotateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_Arm_01_RK_Jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_01_RK_Jnt_ctrl" 
-		"rotate" " -type \"double3\" -1.4349902051362724 2.91638258447434273 -1.44375173670783896"
+		"rotate" " -type \"double3\" 12.67743614372659167 -4.85440854625453255 -1.31397759906113509"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_Arm_01_RK_Jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_01_RK_Jnt_ctrl" 
 		"rotateX" " -av"
@@ -1142,7 +1148,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Arms_Controls|Cheetah_Rig02_Skin03_1:R_Arm_Controls|Cheetah_Rig02_Skin03_1:R_Arm_01_RK_Jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Arm_01_RK_Jnt_ctrl" 
 		"Paw_FKIK" " -av -k 1 0"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:Hips_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Hips_bn_jnt_ctrl" 
-		"translate" " -type \"double3\" -0.36303420475136827 0.08482063629112653 0"
+		"translate" " -type \"double3\" -0.24146484183621686 0.11646608660312724 0"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:Hips_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Hips_bn_jnt_ctrl" 
 		"translateX" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:Hips_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Hips_bn_jnt_ctrl" 
@@ -1150,7 +1156,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:Hips_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Hips_bn_jnt_ctrl" 
 		"translateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:Hips_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Hips_bn_jnt_ctrl" 
-		"rotate" " -type \"double3\" 0 0 15.36195524981906502"
+		"rotate" " -type \"double3\" 0 0 -10.07822706869140461"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:Hips_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Hips_bn_jnt_ctrl" 
 		"rotateX" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:Hips_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Hips_bn_jnt_ctrl" 
@@ -1158,7 +1164,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:Hips_bn_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:Hips_bn_jnt_ctrl" 
 		"rotateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl" 
-		"translate" " -type \"double3\" -0.085754987689751636 0.44686822629112488 -0.040326514937882051"
+		"translate" " -type \"double3\" 0.17658311606777213 -0.06421518686395436 0.0089769415546166464"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl" 
 		"translateX" " -av"
@@ -1167,23 +1173,23 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl" 
 		"translateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl" 
-		"rotate" " -type \"double3\" -0.19638754628602273 -0.7958218889541806 -20.23796431012685915"
+		"rotate" " -type \"double3\" -0.81320074308087786 -3.29533600116896919 -9.74892731390023393"
 		
+		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl" 
+		"rotateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl" 
 		"rotateX" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl" 
 		"rotateY" " -av"
-		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl" 
-		"rotateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_02_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_02_fk_jnt_ctrl" 
-		"rotate" " -type \"double3\" 3.17748836748545216 -1.97702374214480092 90.06249231620506634"
+		"rotate" " -type \"double3\" 0.66649334866767662 1.60510154305856845 -0.96814072302174448"
 		
+		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_02_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_02_fk_jnt_ctrl" 
+		"rotateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_02_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_02_fk_jnt_ctrl" 
 		"rotateX" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_02_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_02_fk_jnt_ctrl" 
 		"rotateY" " -av"
-		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_02_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_02_fk_jnt_ctrl" 
-		"rotateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_Leg_01_RK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_RK_jnt_ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_Leg_01_RK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_RK_jnt_ctrl" 
@@ -1206,29 +1212,12 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_Leg_01_RK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_RK_jnt_ctrl" 
 		"Foot_FKIK" " -av -k 1 0"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:L_Leg_03_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_03_fk_jnt_ctrl" 
-		"rotate" " -type \"double3\" 0 0 -70.05751133982073497"
+		"rotate" " -type \"double3\" 0 0 -16.37239288061497788"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:L_Leg_03_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_03_fk_jnt_ctrl" 
 		"rotateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:L_Leg_04_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_04_fk_jnt_ctrl" 
-		"rotate" " -type \"double3\" 0 0 80.56879883694372779"
+		"rotate" " -type \"double3\" 0 0 43.79380068510700852"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:L_Leg_04_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_04_fk_jnt_ctrl" 
-		"rotateZ" " -av"
-		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_IK_Foot_Controls|Cheetah_Rig02_Skin03_1:L_heel_ctrl_grp" 
-		"translate" " -type \"double3\" 1.13502132892608665 0.050219327211379561 -4.25888967514038086"
-		
-		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_IK_Foot_Controls|Cheetah_Rig02_Skin03_1:L_heel_ctrl_grp" 
-		"translateX" " -av"
-		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_IK_Foot_Controls|Cheetah_Rig02_Skin03_1:L_heel_ctrl_grp" 
-		"translateY" " -av"
-		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_IK_Foot_Controls|Cheetah_Rig02_Skin03_1:L_heel_ctrl_grp" 
-		"translateZ" " -av"
-		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_IK_Foot_Controls|Cheetah_Rig02_Skin03_1:L_heel_ctrl_grp" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_IK_Foot_Controls|Cheetah_Rig02_Skin03_1:L_heel_ctrl_grp" 
-		"rotateX" " -av"
-		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_IK_Foot_Controls|Cheetah_Rig02_Skin03_1:L_heel_ctrl_grp" 
-		"rotateY" " -av"
-		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_IK_Foot_Controls|Cheetah_Rig02_Skin03_1:L_heel_ctrl_grp" 
 		"rotateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_IK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:R_IK_Foot_ctrl_grp|Cheetah_Rig02_Skin03_1:R_IK_Foot_ctrl|Cheetah_Rig02_Skin03_1:nurbsCircle1" 
 		"visibility" " 1"
@@ -1250,7 +1239,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_IK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:R_IK_knee_ctrl_grp|Cheetah_Rig02_Skin03_1:R_IK_knee_ctrl" 
 		"translateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:R_Leg_01_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_01_fk_jnt_ctrl" 
-		"translate" " -type \"double3\" 0.040468721320822465 0.1602042392696009 0.017848971293122885"
+		"translate" " -type \"double3\" -0.071322250530499204 0.023335438395807588 -0.0037388475082695636"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:R_Leg_01_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_01_fk_jnt_ctrl" 
 		"translateX" " -av"
@@ -1259,7 +1248,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:R_Leg_01_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_01_fk_jnt_ctrl" 
 		"translateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:R_Leg_01_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_01_fk_jnt_ctrl" 
-		"rotate" " -type \"double3\" 0.80776550405092562 2.47803201863020472 -5.22995957374643172"
+		"rotate" " -type \"double3\" 0.69563056734114537 -0.31825237582445265 -45.59655042636799038"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:R_Leg_01_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_01_fk_jnt_ctrl" 
 		"rotateX" " -av"
@@ -1268,7 +1257,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:R_Leg_01_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_01_fk_jnt_ctrl" 
 		"rotateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:R_Leg_02_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_02_fk_jnt_ctrl" 
-		"rotate" " -type \"double3\" 0 0 78.00158470172806346"
+		"rotate" " -type \"double3\" 0 0 14.3770594873474078"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:R_Leg_02_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_02_fk_jnt_ctrl" 
 		"rotateX" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:R_Leg_02_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_02_fk_jnt_ctrl" 
@@ -1276,7 +1265,7 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:R_Leg_02_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_02_fk_jnt_ctrl" 
 		"rotateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_Leg_01_RK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_01_RK_jnt_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"rotate" " -type \"double3\" -6.82241868691230469 0 0"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_Leg_01_RK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_01_RK_jnt_ctrl" 
 		"rotateX" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_Leg_01_RK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_01_RK_jnt_ctrl" 
@@ -1284,60 +1273,38 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_Leg_01_RK_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_01_RK_jnt_ctrl" 
 		"Foot_FKIK" " -av -k 1 0"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_Leg_03_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_03_fk_jnt_ctrl" 
-		"rotate" " -type \"double3\" 0.14499307998175023 0.18883316499031202 -48.05157868162186219"
+		"rotate" " -type \"double3\" 0.17430312258212369 0.17368222443814904 -35.50401187178113815"
 		
+		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_Leg_03_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_03_fk_jnt_ctrl" 
+		"rotateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_Leg_03_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_03_fk_jnt_ctrl" 
 		"rotateX" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_Leg_03_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_03_fk_jnt_ctrl" 
 		"rotateY" " -av"
-		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_Leg_03_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_03_fk_jnt_ctrl" 
-		"rotateZ" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_Leg_04_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_04_fk_jnt_ctrl" 
-		"rotate" " -type \"double3\" 0 0 94.06889015630885353"
+		"rotate" " -type \"double3\" 0 0 62.3867323542497374"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_Leg_04_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_04_fk_jnt_ctrl" 
 		"rotateZ" " -av"
-		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_IK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_heel_ctrl_grp" 
-		"translate" " -type \"double3\" -1.13502132892608598 0.050219327211380893 -4.25888967514038086"
-		
-		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_IK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_heel_ctrl_grp" 
-		"translateX" " -av"
-		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_IK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_heel_ctrl_grp" 
-		"translateY" " -av"
-		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_IK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_heel_ctrl_grp" 
-		"translateZ" " -av"
-		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_IK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_heel_ctrl_grp" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_IK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_heel_ctrl_grp" 
-		"rotateX" " -av"
-		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_IK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_heel_ctrl_grp" 
-		"rotateY" " -av"
-		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_IK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_heel_ctrl_grp" 
-		"rotateZ" " -av"
-		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_IK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_heel_ctrl_grp|Cheetah_Rig02_Skin03_1:R_heel_ctrl|Cheetah_Rig02_Skin03_1:R_toe_ctrl_grp|Cheetah_Rig02_Skin03_1:R_toe_ctrl|Cheetah_Rig02_Skin03_1:R_ball_ctrl_grp|Cheetah_Rig02_Skin03_1:R_ball_ctrl|Cheetah_Rig02_Skin03_1:ikHandle30" 
-		"rotate" " -type \"double3\" 176.43868871705333845 0.50450730951536527 94.8140527490257341"
-		
-		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_IK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_heel_ctrl_grp|Cheetah_Rig02_Skin03_1:R_heel_ctrl|Cheetah_Rig02_Skin03_1:R_toe_ctrl_grp|Cheetah_Rig02_Skin03_1:R_toe_ctrl|Cheetah_Rig02_Skin03_1:R_ball_ctrl_grp|Cheetah_Rig02_Skin03_1:R_ball_ctrl|Cheetah_Rig02_Skin03_1:ikHandle30" 
-		"rotateX" " -av"
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Deformers|Cheetah_Rig02_Skin03_1:tail_splineikHandle" 
-		"translate" " -type \"double3\" 2.86597310436021457 13.10935993945939337 -13.09402642324627486"
+		"translate" " -type \"double3\" -3.23747826672559258 12.54274017251747608 -9.35453419517146934"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Deformers|Cheetah_Rig02_Skin03_1:tail_splineikHandle" 
-		"rotate" " -type \"double3\" 46.10419725018565629 34.92724834689558122 41.94928565054221536"
+		"rotate" " -type \"double3\" 120.20636398751021545 -0.27738760207587732 122.52388827112127956"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Deformers|Cheetah_Rig02_Skin03_1:spine_splineikHandle" 
-		"translate" " -type \"double3\" -6.7958541939681406e-05 7.27839745011053818 3.42439002737461262"
+		"translate" " -type \"double3\" 0.00014008731985747785 7.93729703161252864 3.57958032748697264"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Deformers|Cheetah_Rig02_Skin03_1:spine_splineikHandle" 
-		"rotate" " -type \"double3\" -89.25334987462689185 -69.54628910820146359 -90.88245725233508665"
+		"rotate" " -type \"double3\" -90.14360520654851427 -60.47335871284983 -88.66929771358776691"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Deformers|Cheetah_Rig02_Skin03_1:neck_splineikHandle" 
-		"translate" " -type \"double3\" 2.0153120945652246e-07 7.20236070114389015 6.53187701022415279"
+		"translate" " -type \"double3\" 1.746692164924184e-07 7.90558608064257751 6.64592241011739215"
 		
 		2 "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Deformers|Cheetah_Rig02_Skin03_1:neck_splineikHandle" 
-		"rotate" " -type \"double3\" 90.00016251191702565 -89.01934534327016024 89.99983736386087685"
+		"rotate" " -type \"double3\" 90.00001010757669917 -81.23908870729351861 89.99998973197997998"
 		
 		2 "Cheetah_Rig02_Skin03_1:ImagePLanes" "displayType" " 2"
-		2 "Cheetah_Rig02_Skin03_1:layer3" "displayType" " 0"
+		2 "Cheetah_Rig02_Skin03_1:layer3" "displayType" " 2"
 		2 "Cheetah_Rig02_Skin03_1:layer3" "visibility" " 0"
 		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Transform_ctrl_grp|Cheetah_Rig02_Skin03_1:Transform_ctrl.globalScale" 
 		"Cheetah_Rig02_Skin03_1RN.placeHolderList[1]" ""
@@ -2139,11 +2106,11 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		"Cheetah_Rig02_Skin03_1RN.placeHolderList[399]" ""
 		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl.translateZ" 
 		"Cheetah_Rig02_Skin03_1RN.placeHolderList[400]" ""
-		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl.rotateX" 
-		"Cheetah_Rig02_Skin03_1RN.placeHolderList[401]" ""
-		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl.rotateY" 
-		"Cheetah_Rig02_Skin03_1RN.placeHolderList[402]" ""
 		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl.rotateZ" 
+		"Cheetah_Rig02_Skin03_1RN.placeHolderList[401]" ""
+		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl.rotateX" 
+		"Cheetah_Rig02_Skin03_1RN.placeHolderList[402]" ""
+		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl.rotateY" 
 		"Cheetah_Rig02_Skin03_1RN.placeHolderList[403]" ""
 		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_01_fk_jnt_ctrl.scaleX" 
 		"Cheetah_Rig02_Skin03_1RN.placeHolderList[404]" ""
@@ -2159,11 +2126,11 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		"Cheetah_Rig02_Skin03_1RN.placeHolderList[409]" ""
 		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_02_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_02_fk_jnt_ctrl.translateZ" 
 		"Cheetah_Rig02_Skin03_1RN.placeHolderList[410]" ""
-		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_02_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_02_fk_jnt_ctrl.rotateX" 
-		"Cheetah_Rig02_Skin03_1RN.placeHolderList[411]" ""
-		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_02_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_02_fk_jnt_ctrl.rotateY" 
-		"Cheetah_Rig02_Skin03_1RN.placeHolderList[412]" ""
 		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_02_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_02_fk_jnt_ctrl.rotateZ" 
+		"Cheetah_Rig02_Skin03_1RN.placeHolderList[411]" ""
+		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_02_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_02_fk_jnt_ctrl.rotateX" 
+		"Cheetah_Rig02_Skin03_1RN.placeHolderList[412]" ""
+		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_02_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_02_fk_jnt_ctrl.rotateY" 
 		"Cheetah_Rig02_Skin03_1RN.placeHolderList[413]" ""
 		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Leg_ctrls_grp|Cheetah_Rig02_Skin03_1:L_Leg_02_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_02_fk_jnt_ctrl.scaleX" 
 		"Cheetah_Rig02_Skin03_1RN.placeHolderList[414]" ""
@@ -2207,11 +2174,11 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		"Cheetah_Rig02_Skin03_1RN.placeHolderList[433]" ""
 		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:L_Leg_03_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_03_fk_jnt_ctrl.translateZ" 
 		"Cheetah_Rig02_Skin03_1RN.placeHolderList[434]" ""
-		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:L_Leg_03_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_03_fk_jnt_ctrl.rotateX" 
-		"Cheetah_Rig02_Skin03_1RN.placeHolderList[435]" ""
-		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:L_Leg_03_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_03_fk_jnt_ctrl.rotateY" 
-		"Cheetah_Rig02_Skin03_1RN.placeHolderList[436]" ""
 		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:L_Leg_03_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_03_fk_jnt_ctrl.rotateZ" 
+		"Cheetah_Rig02_Skin03_1RN.placeHolderList[435]" ""
+		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:L_Leg_03_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_03_fk_jnt_ctrl.rotateX" 
+		"Cheetah_Rig02_Skin03_1RN.placeHolderList[436]" ""
+		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:L_Leg_03_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_03_fk_jnt_ctrl.rotateY" 
 		"Cheetah_Rig02_Skin03_1RN.placeHolderList[437]" ""
 		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:L_Leg_03_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_03_fk_jnt_ctrl.scaleX" 
 		"Cheetah_Rig02_Skin03_1RN.placeHolderList[438]" ""
@@ -2231,11 +2198,11 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		"Cheetah_Rig02_Skin03_1RN.placeHolderList[445]" ""
 		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:L_Leg_04_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_04_fk_jnt_ctrl.translateZ" 
 		"Cheetah_Rig02_Skin03_1RN.placeHolderList[446]" ""
-		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:L_Leg_04_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_04_fk_jnt_ctrl.rotateX" 
-		"Cheetah_Rig02_Skin03_1RN.placeHolderList[447]" ""
-		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:L_Leg_04_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_04_fk_jnt_ctrl.rotateY" 
-		"Cheetah_Rig02_Skin03_1RN.placeHolderList[448]" ""
 		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:L_Leg_04_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_04_fk_jnt_ctrl.rotateZ" 
+		"Cheetah_Rig02_Skin03_1RN.placeHolderList[447]" ""
+		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:L_Leg_04_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_04_fk_jnt_ctrl.rotateX" 
+		"Cheetah_Rig02_Skin03_1RN.placeHolderList[448]" ""
+		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:L_Leg_04_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_04_fk_jnt_ctrl.rotateY" 
 		"Cheetah_Rig02_Skin03_1RN.placeHolderList[449]" ""
 		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:L_Leg_Controls|Cheetah_Rig02_Skin03_1:L_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:L_Leg_04_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:L_Leg_04_fk_jnt_ctrl.scaleX" 
 		"Cheetah_Rig02_Skin03_1RN.placeHolderList[450]" ""
@@ -2449,11 +2416,11 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		"Cheetah_Rig02_Skin03_1RN.placeHolderList[554]" ""
 		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_Leg_03_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_03_fk_jnt_ctrl.translateZ" 
 		"Cheetah_Rig02_Skin03_1RN.placeHolderList[555]" ""
-		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_Leg_03_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_03_fk_jnt_ctrl.rotateX" 
-		"Cheetah_Rig02_Skin03_1RN.placeHolderList[556]" ""
-		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_Leg_03_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_03_fk_jnt_ctrl.rotateY" 
-		"Cheetah_Rig02_Skin03_1RN.placeHolderList[557]" ""
 		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_Leg_03_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_03_fk_jnt_ctrl.rotateZ" 
+		"Cheetah_Rig02_Skin03_1RN.placeHolderList[556]" ""
+		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_Leg_03_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_03_fk_jnt_ctrl.rotateX" 
+		"Cheetah_Rig02_Skin03_1RN.placeHolderList[557]" ""
+		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_Leg_03_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_03_fk_jnt_ctrl.rotateY" 
 		"Cheetah_Rig02_Skin03_1RN.placeHolderList[558]" ""
 		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_Leg_03_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_03_fk_jnt_ctrl.scaleX" 
 		"Cheetah_Rig02_Skin03_1RN.placeHolderList[559]" ""
@@ -2473,11 +2440,11 @@ createNode reference -n "Cheetah_Rig02_Skin03_1RN";
 		"Cheetah_Rig02_Skin03_1RN.placeHolderList[566]" ""
 		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_Leg_04_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_04_fk_jnt_ctrl.translateZ" 
 		"Cheetah_Rig02_Skin03_1RN.placeHolderList[567]" ""
-		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_Leg_04_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_04_fk_jnt_ctrl.rotateX" 
-		"Cheetah_Rig02_Skin03_1RN.placeHolderList[568]" ""
-		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_Leg_04_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_04_fk_jnt_ctrl.rotateY" 
-		"Cheetah_Rig02_Skin03_1RN.placeHolderList[569]" ""
 		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_Leg_04_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_04_fk_jnt_ctrl.rotateZ" 
+		"Cheetah_Rig02_Skin03_1RN.placeHolderList[568]" ""
+		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_Leg_04_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_04_fk_jnt_ctrl.rotateX" 
+		"Cheetah_Rig02_Skin03_1RN.placeHolderList[569]" ""
+		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_Leg_04_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_04_fk_jnt_ctrl.rotateY" 
 		"Cheetah_Rig02_Skin03_1RN.placeHolderList[570]" ""
 		5 4 "Cheetah_Rig02_Skin03_1RN" "|Cheetah_Rig02_Skin03_1:New_Cheetah|Cheetah_Rig02_Skin03_1:Controls|Cheetah_Rig02_Skin03_1:Legs_Controls|Cheetah_Rig02_Skin03_1:R_Leg_Controls|Cheetah_Rig02_Skin03_1:R_FK_Foot_Controls|Cheetah_Rig02_Skin03_1:R_Leg_04_fk_jnt_ctrl_grp|Cheetah_Rig02_Skin03_1:R_Leg_04_fk_jnt_ctrl.scaleX" 
 		"Cheetah_Rig02_Skin03_1RN.placeHolderList[571]" ""
@@ -2881,8 +2848,8 @@ createNode animCurveTA -n "Tail_ctrl_01_jnt_ctrl_rotateZ";
 	rename -uid "2E9F5237-4CD9-AD2F-BE74-07B2C22A4EE4";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  -3 0 1 11.537177844386957 3 18.942798758013712
-		 5 22.450724453942179 9 13.242419502129957 13 11.537177844386957 15 19.214259344402851;
+	setAttr -s 7 ".ktv[0:6]"  -3 0 1 11.537177844386955 3 18.942798758013712
+		 5 22.450724453942179 9 13.242419502129957 13 11.537177844386955 15 19.214259344402851;
 	setAttr -s 7 ".kit[6]"  1;
 	setAttr -s 7 ".kot[6]"  1;
 	setAttr -s 7 ".kix[6]"  1;
@@ -3968,7 +3935,7 @@ createNode animCurveTA -n "R_Arm_01_RK_Jnt_ctrl_rotateX";
 	rename -uid "E9432FF1-4270-1335-B3CF-5584A5395FD4";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 24.64681790991882 3 6.3148508016120681
+	setAttr -s 7 ".ktv[0:6]"  1 24.64681790991882 3 6.3148508016120672
 		 4 -12.36132516435296 6 -2.3601812584478168 11 0 12 12.677436143726592 13 24.64681790991882;
 	setAttr -s 7 ".kit[6]"  1;
 	setAttr -s 7 ".kot[6]"  1;
@@ -7295,17 +7262,17 @@ createNode script -n "uiConfigurationScriptNode";
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n"
 		+ "            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n"
 		+ "            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n"
-		+ "            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 105\n            -height 253\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"wireframe\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 0\n            -ikHandles 0\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 0\n            -ikHandles 0\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 954\n            -height 419\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
 		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n"
 		+ "            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n"
-		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n"
+		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 115\n            -height 419\n"
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
 		+ "            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
-		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 0\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 0\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
-		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1031\n            -height 716\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n"
+		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 0\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 0\n            -ikHandles 0\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
+		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1076\n            -height 716\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n"
 		+ "            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n"
 		+ "            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n"
 		+ "\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n"
@@ -7329,10 +7296,10 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "                -textureDisplay \"modulate\" \n                -textureMaxSize 16384\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n"
 		+ "                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n"
 		+ "                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n"
-		+ "                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"corner\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n"
-		+ "                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap true\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 0\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 0\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1031\\n    -height 716\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 0\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 0\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1031\\n    -height 716\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n"
+		+ "                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap true\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 0\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 0\\n    -ikHandles 0\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1076\\n    -height 716\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 0\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 0\\n    -ikHandles 0\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1076\\n    -height 716\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -7347,7 +7314,7 @@ createNode animCurveTA -n "R_Arm_02_FK_jnt_ctrl_rotateX";
 	rename -uid "65CC0CF9-493E-7381-B6E2-1F9C5CEDADE3";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 0 6 -0.29105326008394961 8 -0.24140295131696149
+	setAttr -s 7 ".ktv[0:6]"  1 0 6 -0.29105326008394955 8 -0.24140295131696149
 		 10 -1.0344709432789974 11 -3.6742702939925502 12 -1.8371351469962736 13 0;
 createNode animCurveTA -n "R_Arm_02_FK_jnt_ctrl_rotateY";
 	rename -uid "B8B2D9ED-4DDF-1F52-A58B-03AA5E316A3C";
@@ -7626,7 +7593,7 @@ createNode animCurveTA -n "R_Shoulder_bn_jnt_ctrl_rotateX";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 11 ".ktv[0:10]"  1 -0.93677525155797758 3 10.905318209854451
-		 4 20.523529830300287 6 7.7641699488757778 7 -4.4438390775828509 8 -9.0205417965132106
+		 4 20.523529830300287 6 7.7641699488757778 7 -4.44383907758285 8 -9.0205417965132106
 		 9 -9.8936241132459983 10 -11.748160531777915 11 -15.625145448170077 12 -8.2809603498640207
 		 13 -0.93677525155797758;
 createNode animCurveTA -n "R_Shoulder_bn_jnt_ctrl_rotateY";
@@ -7676,7 +7643,7 @@ createNode animCurveTA -n "Tail_ctrl_03_jnt_ctrl_rotateZ";
 	rename -uid "7E0A65E3-45D4-9408-384E-2DB4142D6DC5";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 8 ".ktv[0:7]"  -3 0 1 78.521875359284593 3 106.00453173503422
+	setAttr -s 8 ".ktv[0:7]"  -3 0 1 78.521875359284593 3 106.00453173503421
 		 5 19.824202707328258 9 44.032614667011735 10 95.270774669099808 13 78.521875359284593
 		 15 21.635185975105994;
 createNode animCurveTA -n "Tail_ctrl_04_jnt_ctrl_rotateX";
@@ -7689,14 +7656,14 @@ createNode animCurveTA -n "Tail_ctrl_04_jnt_ctrl_rotateY";
 	rename -uid "23282F63-4681-4EB1-C9EB-15BE23C2ACFC";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 8 ".ktv[0:7]"  -3 0 1 40.986852817953711 3 53.291874788238694
+	setAttr -s 8 ".ktv[0:7]"  -3 0 1 40.986852817953711 3 53.291874788238687
 		 5 0 9 -53.927211319998797 10 -31.600859968246116 13 40.986852817953711 15 0;
 createNode animCurveTA -n "Tail_ctrl_04_jnt_ctrl_rotateZ";
 	rename -uid "434929FC-4DB3-E288-A1A6-2FA636B5E894";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 8 ".ktv[0:7]"  -3 0 1 70.088208062804071 3 71.023015547014111
-		 5 34.300646532207239 9 46.337418061825367 10 87.743916085677242 13 70.088208062804071
+	setAttr -s 8 ".ktv[0:7]"  -3 0 1 70.088208062804057 3 71.023015547014111
+		 5 34.300646532207239 9 46.337418061825367 10 87.743916085677242 13 70.088208062804057
 		 15 31.742081195796914;
 createNode animCurveTU -n "Tail_ctrl_04_jnt_ctrl_visibility";
 	rename -uid "A52C0C9A-4CCE-2EF5-DC3A-DC9B7C968C3C";
@@ -7795,7 +7762,7 @@ createNode animCurveTA -n "L_Leg_04_fk_jnt_ctrl_rotateZ";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 30.810296103851865 2 30.810296103851865
-		 3 75.415384266697046 4 98.321791757573081 5 90.114684436661307 11 60.483829537162777
+		 3 75.415384266697046 4 98.321791757573067 5 90.114684436661307 11 60.483829537162777
 		 12 43.793800685107009 13 30.810296103851865;
 createNode animCurveTU -n "L_Leg_04_fk_jnt_ctrl_visibility";
 	rename -uid "19689044-4F1A-4CDD-D457-818FF381AE66";
@@ -7880,7 +7847,7 @@ createNode animCurveTA -n "L_Leg_03_fk_jnt_ctrl_rotateZ";
 	setAttr ".wgt" no;
 	setAttr -s 12 ".ktv[0:11]"  1 -24.865639465386309 2 -24.865639465386309
 		 3 11.205289425829102 4 27.380859304867496 5 -2.9749526241327424 6 -51.486241844914964
-		 7 -70.057511339820735 8 -83.063138205484918 10 -56.999026493973034 11 -7.8791462958436291
+		 7 -70.057511339820735 8 -83.063138205484918 10 -56.999026493973027 11 -7.8791462958436291
 		 12 -16.372392880614978 13 -24.865639465386309;
 createNode animCurveTU -n "L_Leg_03_fk_jnt_ctrl_scaleX";
 	rename -uid "6C154025-4714-2673-EA8E-5FAEEB16F293";
@@ -7933,13 +7900,13 @@ createNode animCurveTA -n "L_Leg_02_fk_jnt_ctrl_rotateX";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  1 0 2 0 4 0 5 3.7033261688264179 7 3.1774883674854522
-		 8 2.8572657187042729 10 3.5425544891070868 11 1.9234124455198696 12 0.66649334866767662
+		 8 2.8572657187042725 10 3.5425544891070868 11 1.9234124455198696 12 0.66649334866767662
 		 13 0;
 createNode animCurveTA -n "L_Leg_02_fk_jnt_ctrl_rotateY";
 	rename -uid "DB29640F-446E-BF08-3F04-CB841802E4FB";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 10 ".ktv[0:9]"  1 0 2 0 4 0 5 0.53555749415038933 7 -1.9770237421448009
+	setAttr -s 10 ".ktv[0:9]"  1 0 2 0 4 0 5 0.53555749415038922 7 -1.9770237421448009
 		 8 -1.9676394934715324 10 1.2054903679092097 11 3.2102030861171396 12 1.6051015430585684
 		 13 0;
 createNode animCurveTA -n "L_Leg_02_fk_jnt_ctrl_rotateZ";
@@ -7947,7 +7914,7 @@ createNode animCurveTA -n "L_Leg_02_fk_jnt_ctrl_rotateZ";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 11 ".ktv[0:10]"  1 -0.9857466025591165 2 -0.9857466025591165
-		 3 11.945858460701704 4 6.7161286783409935 5 49.986827382114512 7 90.062492316205066
+		 3 11.945858460701702 4 6.7161286783409935 5 49.986827382114512 7 90.062492316205066
 		 8 92.088924760511532 10 39.434916635876014 11 -0.84489956626013929 12 -0.96814072302174448
 		 13 -0.9857466025591165;
 createNode animCurveTU -n "L_Leg_02_fk_jnt_ctrl_scaleX";
@@ -8073,7 +8040,7 @@ createNode animCurveTA -n "R_Leg_02_fk_jnt_ctrl_rotateZ";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 12 ".ktv[0:11]"  0 0 1 -1.7612398182799234 2 3.0719833594122621
-		 3 33.063764913851109 4 3.6023608122746289 5 13.958544121734082 6 38.959712985957687
+		 3 33.063764913851109 4 3.6023608122746289 5 13.958544121734082 6 38.95971298595768
 		 8 102.31704037524634 10 84.620217314524552 11 44.912268315108847 12 14.377059487347408
 		 13 -1.7612398182799234;
 createNode animCurveTU -n "R_Leg_02_fk_jnt_ctrl_scaleX";
@@ -8114,7 +8081,7 @@ createNode animCurveTA -n "R_Leg_03_fk_jnt_ctrl_rotateY";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 11 ".ktv[0:10]"  0 0.039081840723636962 1 0.10796433009527642
-		 3 0.19206735361054997 4 -0.041824361446488406 5 -0.062764196258966454 6 0.058190159664136772
+		 3 0.19206735361054994 4 -0.041824361446488406 5 -0.062764196258966454 6 0.058190159664136772
 		 8 0.26487040366285092 10 0.2595176237676115 11 0.25147062177297563 12 0.17368222443814904
 		 13 0.10796433009527642;
 createNode animCurveTA -n "R_Leg_03_fk_jnt_ctrl_rotateZ";
@@ -8155,7 +8122,7 @@ createNode animCurveTA -n "R_Leg_01_fk_jnt_ctrl_rotateY";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 11 ".ktv[0:10]"  0 0.16613866991662687 1 -3.2134271278949766
-		 3 0.11732192142768037 4 0.66634541007184456 5 1.3910267811363193 6 1.8715067648041341
+		 3 0.11732192142768037 4 0.66634541007184445 5 1.3910267811363193 6 1.8715067648041341
 		 8 2.8426243451248525 10 2.3897365515430686 11 2.5769223762460758 12 -0.31825237582445265
 		 13 -3.2134271278949766;
 createNode animCurveTA -n "R_Leg_01_fk_jnt_ctrl_rotateZ";
@@ -8358,45 +8325,9 @@ createNode animCurveTU -n "R_Leg_01_RK_jnt_ctrl_Foot_FKIK";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 3 ".ktv[0:2]"  1 0 11 0 12 0;
-createNode gameFbxExporter -n "gameExporterPreset1";
-	rename -uid "292E92FB-4E32-01A6-834D-89ABEC610EDB";
-	setAttr ".pn" -type "string" "Model Default";
-	setAttr ".ils" yes;
-	setAttr ".esi" 2;
-	setAttr ".ssn" -type "string" "";
-	setAttr ".ebm" yes;
-	setAttr ".inc" yes;
-	setAttr ".fv" -type "string" "FBX201800";
-	setAttr ".exp" -type "string" "C:/Users/Dan Barber/Documents/Spencer/UVUFall2008/Big Project/VRAnimals/Animations";
-	setAttr ".exf" -type "string" "CatRunExport";
-createNode gameFbxExporter -n "gameExporterPreset2";
-	rename -uid "3A5A24F9-4203-5299-B950-4BB6C046437F";
-	setAttr ".pn" -type "string" "Anim Default";
-	setAttr ".ils" yes;
-	setAttr ".ilu" yes;
-	setAttr ".eti" 2;
-	setAttr ".esi" 2;
-	setAttr ".ssn" -type "string" "";
-	setAttr ".ac[0].acn" -type "string" "Run";
-	setAttr ".ac[0].acs" 1;
-	setAttr ".ac[0].ace" 12;
-	setAttr ".spt" 2;
-	setAttr ".ic" no;
-	setAttr ".ebm" yes;
-	setAttr ".fv" -type "string" "FBX201800";
-	setAttr ".exp" -type "string" "C:/Users/Dan Barber/Documents/Spencer/UVUFall2008/Big Project/VRAnimals/Animations";
-	setAttr ".exf" -type "string" "Runnnbbb";
-createNode gameFbxExporter -n "gameExporterPreset3";
-	rename -uid "CA8C8E32-4750-DA7C-62CD-5BA0A1C3FFC6";
-	setAttr ".pn" -type "string" "TE Anim Default";
-	setAttr ".ils" yes;
-	setAttr ".eti" 3;
-	setAttr ".ssn" -type "string" "";
-	setAttr ".ebm" yes;
-	setAttr ".fv" -type "string" "FBX201800";
 select -ne :time1;
-	setAttr ".o" 7;
-	setAttr ".unw" 7;
+	setAttr ".o" 12;
+	setAttr ".unw" 12;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -9004,11 +8935,11 @@ connectAttr "L_Leg_01_fk_jnt_ctrl_translateY.o" "Cheetah_Rig02_Skin03_1RN.phl[39
 		;
 connectAttr "L_Leg_01_fk_jnt_ctrl_translateZ.o" "Cheetah_Rig02_Skin03_1RN.phl[400]"
 		;
-connectAttr "L_Leg_01_fk_jnt_ctrl_rotateX.o" "Cheetah_Rig02_Skin03_1RN.phl[401]"
+connectAttr "L_Leg_01_fk_jnt_ctrl_rotateZ.o" "Cheetah_Rig02_Skin03_1RN.phl[401]"
 		;
-connectAttr "L_Leg_01_fk_jnt_ctrl_rotateY.o" "Cheetah_Rig02_Skin03_1RN.phl[402]"
+connectAttr "L_Leg_01_fk_jnt_ctrl_rotateX.o" "Cheetah_Rig02_Skin03_1RN.phl[402]"
 		;
-connectAttr "L_Leg_01_fk_jnt_ctrl_rotateZ.o" "Cheetah_Rig02_Skin03_1RN.phl[403]"
+connectAttr "L_Leg_01_fk_jnt_ctrl_rotateY.o" "Cheetah_Rig02_Skin03_1RN.phl[403]"
 		;
 connectAttr "L_Leg_01_fk_jnt_ctrl_scaleX.o" "Cheetah_Rig02_Skin03_1RN.phl[404]";
 connectAttr "L_Leg_01_fk_jnt_ctrl_scaleY.o" "Cheetah_Rig02_Skin03_1RN.phl[405]";
@@ -9021,11 +8952,11 @@ connectAttr "L_Leg_02_fk_jnt_ctrl_translateY.o" "Cheetah_Rig02_Skin03_1RN.phl[40
 		;
 connectAttr "L_Leg_02_fk_jnt_ctrl_translateZ.o" "Cheetah_Rig02_Skin03_1RN.phl[410]"
 		;
-connectAttr "L_Leg_02_fk_jnt_ctrl_rotateX.o" "Cheetah_Rig02_Skin03_1RN.phl[411]"
+connectAttr "L_Leg_02_fk_jnt_ctrl_rotateZ.o" "Cheetah_Rig02_Skin03_1RN.phl[411]"
 		;
-connectAttr "L_Leg_02_fk_jnt_ctrl_rotateY.o" "Cheetah_Rig02_Skin03_1RN.phl[412]"
+connectAttr "L_Leg_02_fk_jnt_ctrl_rotateX.o" "Cheetah_Rig02_Skin03_1RN.phl[412]"
 		;
-connectAttr "L_Leg_02_fk_jnt_ctrl_rotateZ.o" "Cheetah_Rig02_Skin03_1RN.phl[413]"
+connectAttr "L_Leg_02_fk_jnt_ctrl_rotateY.o" "Cheetah_Rig02_Skin03_1RN.phl[413]"
 		;
 connectAttr "L_Leg_02_fk_jnt_ctrl_scaleX.o" "Cheetah_Rig02_Skin03_1RN.phl[414]";
 connectAttr "L_Leg_02_fk_jnt_ctrl_scaleY.o" "Cheetah_Rig02_Skin03_1RN.phl[415]";
@@ -9063,11 +8994,11 @@ connectAttr "L_Leg_03_fk_jnt_ctrl_translateY.o" "Cheetah_Rig02_Skin03_1RN.phl[43
 		;
 connectAttr "L_Leg_03_fk_jnt_ctrl_translateZ.o" "Cheetah_Rig02_Skin03_1RN.phl[434]"
 		;
-connectAttr "L_Leg_03_fk_jnt_ctrl_rotateX.o" "Cheetah_Rig02_Skin03_1RN.phl[435]"
+connectAttr "L_Leg_03_fk_jnt_ctrl_rotateZ.o" "Cheetah_Rig02_Skin03_1RN.phl[435]"
 		;
-connectAttr "L_Leg_03_fk_jnt_ctrl_rotateY.o" "Cheetah_Rig02_Skin03_1RN.phl[436]"
+connectAttr "L_Leg_03_fk_jnt_ctrl_rotateX.o" "Cheetah_Rig02_Skin03_1RN.phl[436]"
 		;
-connectAttr "L_Leg_03_fk_jnt_ctrl_rotateZ.o" "Cheetah_Rig02_Skin03_1RN.phl[437]"
+connectAttr "L_Leg_03_fk_jnt_ctrl_rotateY.o" "Cheetah_Rig02_Skin03_1RN.phl[437]"
 		;
 connectAttr "L_Leg_03_fk_jnt_ctrl_scaleX.o" "Cheetah_Rig02_Skin03_1RN.phl[438]";
 connectAttr "L_Leg_03_fk_jnt_ctrl_scaleY.o" "Cheetah_Rig02_Skin03_1RN.phl[439]";
@@ -9084,11 +9015,11 @@ connectAttr "L_Leg_04_fk_jnt_ctrl_translateY.o" "Cheetah_Rig02_Skin03_1RN.phl[44
 		;
 connectAttr "L_Leg_04_fk_jnt_ctrl_translateZ.o" "Cheetah_Rig02_Skin03_1RN.phl[446]"
 		;
-connectAttr "L_Leg_04_fk_jnt_ctrl_rotateX.o" "Cheetah_Rig02_Skin03_1RN.phl[447]"
+connectAttr "L_Leg_04_fk_jnt_ctrl_rotateZ.o" "Cheetah_Rig02_Skin03_1RN.phl[447]"
 		;
-connectAttr "L_Leg_04_fk_jnt_ctrl_rotateY.o" "Cheetah_Rig02_Skin03_1RN.phl[448]"
+connectAttr "L_Leg_04_fk_jnt_ctrl_rotateX.o" "Cheetah_Rig02_Skin03_1RN.phl[448]"
 		;
-connectAttr "L_Leg_04_fk_jnt_ctrl_rotateZ.o" "Cheetah_Rig02_Skin03_1RN.phl[449]"
+connectAttr "L_Leg_04_fk_jnt_ctrl_rotateY.o" "Cheetah_Rig02_Skin03_1RN.phl[449]"
 		;
 connectAttr "L_Leg_04_fk_jnt_ctrl_scaleX.o" "Cheetah_Rig02_Skin03_1RN.phl[450]";
 connectAttr "L_Leg_04_fk_jnt_ctrl_scaleY.o" "Cheetah_Rig02_Skin03_1RN.phl[451]";
@@ -9227,11 +9158,11 @@ connectAttr "R_Leg_03_fk_jnt_ctrl_translateY.o" "Cheetah_Rig02_Skin03_1RN.phl[55
 		;
 connectAttr "R_Leg_03_fk_jnt_ctrl_translateZ.o" "Cheetah_Rig02_Skin03_1RN.phl[555]"
 		;
-connectAttr "R_Leg_03_fk_jnt_ctrl_rotateX.o" "Cheetah_Rig02_Skin03_1RN.phl[556]"
+connectAttr "R_Leg_03_fk_jnt_ctrl_rotateZ.o" "Cheetah_Rig02_Skin03_1RN.phl[556]"
 		;
-connectAttr "R_Leg_03_fk_jnt_ctrl_rotateY.o" "Cheetah_Rig02_Skin03_1RN.phl[557]"
+connectAttr "R_Leg_03_fk_jnt_ctrl_rotateX.o" "Cheetah_Rig02_Skin03_1RN.phl[557]"
 		;
-connectAttr "R_Leg_03_fk_jnt_ctrl_rotateZ.o" "Cheetah_Rig02_Skin03_1RN.phl[558]"
+connectAttr "R_Leg_03_fk_jnt_ctrl_rotateY.o" "Cheetah_Rig02_Skin03_1RN.phl[558]"
 		;
 connectAttr "R_Leg_03_fk_jnt_ctrl_scaleX.o" "Cheetah_Rig02_Skin03_1RN.phl[559]";
 connectAttr "R_Leg_03_fk_jnt_ctrl_scaleY.o" "Cheetah_Rig02_Skin03_1RN.phl[560]";
@@ -9248,11 +9179,11 @@ connectAttr "R_Leg_04_fk_jnt_ctrl_translateY.o" "Cheetah_Rig02_Skin03_1RN.phl[56
 		;
 connectAttr "R_Leg_04_fk_jnt_ctrl_translateZ.o" "Cheetah_Rig02_Skin03_1RN.phl[567]"
 		;
-connectAttr "R_Leg_04_fk_jnt_ctrl_rotateX.o" "Cheetah_Rig02_Skin03_1RN.phl[568]"
+connectAttr "R_Leg_04_fk_jnt_ctrl_rotateZ.o" "Cheetah_Rig02_Skin03_1RN.phl[568]"
 		;
-connectAttr "R_Leg_04_fk_jnt_ctrl_rotateY.o" "Cheetah_Rig02_Skin03_1RN.phl[569]"
+connectAttr "R_Leg_04_fk_jnt_ctrl_rotateX.o" "Cheetah_Rig02_Skin03_1RN.phl[569]"
 		;
-connectAttr "R_Leg_04_fk_jnt_ctrl_rotateZ.o" "Cheetah_Rig02_Skin03_1RN.phl[570]"
+connectAttr "R_Leg_04_fk_jnt_ctrl_rotateY.o" "Cheetah_Rig02_Skin03_1RN.phl[570]"
 		;
 connectAttr "R_Leg_04_fk_jnt_ctrl_scaleX.o" "Cheetah_Rig02_Skin03_1RN.phl[571]";
 connectAttr "R_Leg_04_fk_jnt_ctrl_scaleY.o" "Cheetah_Rig02_Skin03_1RN.phl[572]";

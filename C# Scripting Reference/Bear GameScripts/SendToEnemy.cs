@@ -6,13 +6,9 @@ using System;
 public class SendToEnemy : MonoBehaviour {
 
 	public static Action<Transform> SendTransform;
-	// Use this for initialization
+	
+	// Sends this object's transform
 	void Start () {
 		SendTransform(transform);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 }
