@@ -15,9 +15,9 @@ public Animator anim;
 
 // Use this for initialization
 	
-	void Awake(){
-		SendToEnemy.SendTransform += SendTransformHandler;
-	}
+	//void Awake(){
+	//	SendToEnemy.SendTransform += SendTransformHandler;
+	//}
 	
 	void Start () {
 		agent = GetComponent<NavMeshAgent>();
