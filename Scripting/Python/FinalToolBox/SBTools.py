@@ -14,12 +14,19 @@ class ToolBox():
         cmds.button(parent=self.mCol, label='Locator Joints Tool', command=lambda x: self.LocJointsWin())
         cmds.button(parent=self.mCol, label='Controls Tool', command=lambda x: self.ControlsWin())
         cmds.button(parent=self.mCol, label='FKIK Switch Tool', command=lambda x: self.FKIKSwitchWin())
+        cmds.button(parent=self.mCol, label='Stretchy IK Tools', command=lambda x: self.StretchyIKWin())
 
         cmds.showWindow(self.mWin)
 
     def delete(self):
         if cmds.window(self.mWin, q=True, exists=True):
             cmds.deleteUI(self.mWin)
+
+    def StretchyIKWin(self):
+        import stretchyIk
+        reload(stretchyIk)
+        renameTool = stretchyIk.StretchyIkUI()
+        renameTool.create()
 
     def renameWin(self):
         import renamer

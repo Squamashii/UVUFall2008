@@ -13,7 +13,8 @@ class RenamerUI():
         self.delete()
         self.mWindow = cmds.window(self.mWindow, title="Renamer")
         self.mCol = cmds.columnLayout(parent=self.mWindow, adjustableColumn=True)
-        self.nameField = cmds.textField(placeholderText="Enter New Name")
+        self.nameField = cmds.textField(placeholderText="Enter New Name. '#' will be replaced by numbers ")
+        cmds.text('First number in sequence')
         self.startingNum = cmds.intField( minValue=0, value=1)
         cmds.button(parent=self.mCol, label='Rename Them Thangs', command=lambda x: self.Renamer(cmds.textField(self.nameField, q=True, tx=True), cmds.intField(self.startingNum, q=True, value=True)))
 
