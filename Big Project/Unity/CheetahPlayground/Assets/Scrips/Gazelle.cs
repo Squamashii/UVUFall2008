@@ -7,6 +7,7 @@ public class Gazelle : MonoBehaviour {
 	public Transform enemy;
 	public GameObject enemyObj;
 	public Rigidbody rb;
+	public float rotateSpeed = 2;
 
 	//public float minDistance = 10;
 	public float runSpeed = 10;
@@ -17,17 +18,27 @@ public class Gazelle : MonoBehaviour {
 		rb = GetComponent<Rigidbody>();
 	}
 	
-// 	void Update()  {
+ 	void Update()  {
+		transform.Rotate(0,rotateSpeed,0);
+		transform.Translate(Vector3.forward*-runSpeed*Time.deltaTime);
+
 //        if(enemy != null)
 //        {
 //             transform.LookAt(enemy);
 //        }
-//   }
+   //}
 
-	void OnTriggerStay (Collider enemyObj){
-		transform.LookAt(enemy);
-		rb.AddForce(transform.forward*-runSpeed);
-
-	}
+	//void OnTriggerStay (Collider other){
+		
+		//if (other != null){
+		//	transform.Rotate(0,-rotateSpeed,0);
+		//	transform.Translate(Vector3.forward*-runSpeed*Time.deltaTime);
+		//}
+		
+		//transform.LookAt(other);
+		//rb.AddForce(transform.forward*-runSpeed);
+		//transform.Rotate(0,-rotateSpeed,0);
+		//transform.Translate(Vector3.forward*-runSpeed*Time.deltaTime);
+		}
 
 }

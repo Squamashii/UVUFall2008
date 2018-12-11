@@ -26,8 +26,9 @@ public class follow : MonoBehaviour {
 		if(other.gameObject.name == "Player1")
 		{
 			transform.Rotate(0,2,0);
-			transform.LookAt(target);
-			transform.Translate(Vector3.forward*-moveSpeed*Time.deltaTime);	
+			transform.Translate(Vector3.forward*-moveSpeed*Time.deltaTime);
+			//transform.LookAt(target);
+				
 		}
 
 		else
