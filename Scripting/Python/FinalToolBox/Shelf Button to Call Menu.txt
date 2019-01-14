@@ -2,8 +2,8 @@ import maya.cmds as cmds
 import random as random
 
 import sys
-if 'C:/Users/10487246/Spencer/UVUFall2008/Scripting/Python/FinalToolBox' not in sys.path:
-    sys.path.append ('C:/Users/10487246/Spencer/UVUFall2008/Scripting/Python/FinalToolBox')
+if 'C:/Users/10487246/Documents/10487246/UVUFall2008/Scripting/Python/FinalToolBox' not in sys.path:
+    sys.path.append ('C:/Users/10487246/Documents/10487246/UVUFall2008/Scripting/Python/FinalToolBox')
     
 import SBTools
 reload(SBTools)   
