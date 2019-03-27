@@ -1,0 +1,6 @@
+Things To double check
+
+- Orient Joints
+- Make sure IK chain joints only have X-Trans and Z-Rot
+- Pole Vector ctrl grp is same transform as knee/elbow jnt then "Object" translated out
+- 
