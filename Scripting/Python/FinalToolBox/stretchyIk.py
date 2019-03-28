@@ -35,37 +35,47 @@ class StretchyIkUI():
         jnt01 = sels[-2]
         jnt02 = sels[-1]
 
+# -- Creates a locator, matches transforms with the IK Control, and parents it to the control. Then gets the shape node    
         loc01 = cmds.spaceLocator(name=ctrlName + '_loc01')
         cmds.matchTransform(loc01, sels[1])
         cmds.parentConstraint(sels[1], loc01)
         loc01Shape = cmds.listRelatives(loc01, s=True)[0]
-
+# -- Creates a locator, matches transforms with the First Joint, and parents it to the Joint. Then gets the shape node
         loc02 = cmds.spaceLocator(name=ctrlName + '_loc02')
         cmds.matchTransform(loc02, sels[2])
         cmds.parentConstraint(sels[2], loc02)
         loc02Shape = cmds.listRelatives(loc02, s=True)[0]
 
-        # Attributes for the Transform_ctrl, It check if this already exists
+# Attributes for the Transform_ctrl, It check if this already exists
         if not cmds.attributeQuery('globalScale', node=sels[0], ex=True):
             cmds.select(sels[0])
             globalScale = cmds.addAttr(shortName=('globalScale'), longName=('globalScale'), k=True, minValue=0.0,
                                    defaultValue=1.0)
 
-        # Attributes for the IK_ctrl
-        cmds.select(sels[1])  # Add 3 attributes to the Transform CTRL
-        Length01 = cmds.addAttr(shortName='length01', longName='length01', k=True, minValue=0.0, defaultValue=1.0)
-        Length02 = cmds.addAttr(shortName='length02', longName='length02', k=True, minValue=0.0, defaultValue=1.0)
-        stretchy = cmds.addAttr(shortName='stretchy', longName='stretchy', k=True, minValue=0.0, maxValue=1.0, defaultValue=1.0)
+# Attributes for the IK_ctrl. It Checks if they already exist, and then creates 3 attributes on the IK_CTRL
+        if not cmds.attributeQuery('length01', node=sels[1], ex=True):
+            cmds.select(sels[1])
+            Length01 = cmds.addAttr(shortName=('length01'), longName=('length01'), k=True, minValue=0.0, defaultValue=1.0)
 
+        if not cmds.attributeQuery('length02', node=sels[1], ex=True):
+            cmds.select(sels[1])
+            Length02 = cmds.addAttr(shortName=('length02'), longName=('length02'), k=True, minValue=0.0, defaultValue=1.0)
+
+        if not cmds.attributeQuery('stretchy', node=sels[1], ex=True):
+            cmds.select(sels[1])
+            stretchy = cmds.addAttr(shortName=('stretchy'), longName=('stretchy'), k=True, minValue=0.0, maxValue=1.0, defaultValue=1.0)
+
+# -- Creates the IK handle and parents it under the IK_Ctrl
         cmds.ikHandle(name=ctrlName + '_IKHandle', sj=sels[-3], ee=sels[-1], solver='ikRPsolver')
-
         cmds.parent((ctrlName + '_IKHandle'), sels[1])
-        # -- Now that we have all of the pieces, lets set up the nodes
+# ---------------------------------------------------------------------------------------------------
+# -- Now that we have all of the pieces, lets set up the nodes
 
+# -- Creates a DistanceBetween node and plugs the two locators into it
         DistND = cmds.createNode('distanceBetween', name=ctrlName + '_DistND')
-
         cmds.connectAttr(loc01Shape + '.worldPosition[0]', DistND + '.point1')
         cmds.connectAttr(loc02Shape + '.worldPosition[0]', DistND + '.point2')
+
 
         ScalerND = cmds.createNode('multiplyDivide', name=ctrlName + '_ScalerND')
         cmds.setAttr(ScalerND + '.operation', 2)
@@ -81,10 +91,11 @@ class StretchyIkUI():
         length01MD = cmds.createNode('multiplyDivide', name=ctrlName + '_length01MD')
         length02MD = cmds.createNode('multiplyDivide', name=ctrlName + '_length02MD')
 
-        ReverseMD = cmds.createNode('multiplyDivide', name=ctrlName + '_ReverseMD')
-        cmds.setAttr(ReverseMD + '.input1X', -1)
-        cmds.setAttr(ReverseMD + '.input1Y', -1)
-
+# -- Reverses the stretch calculation for the Right side
+#        ReverseMD = cmds.createNode('multiplyDivide', name=ctrlName + '_ReverseMD')
+#        cmds.setAttr(ReverseMD + '.input1X', -1)
+#        cmds.setAttr(ReverseMD + '.input1Y', -1)
+# ---------------------------------------------------------
         LengthPMA = cmds.createNode('plusMinusAverage', name=ctrlName + '_LengthPMA')
 
         lenX = cmds.getAttr(sels[-2] + '.translateX')
@@ -117,11 +128,11 @@ class StretchyIkUI():
         j01MD = cmds.createNode('multiplyDivide', name=ctrlName + '_jnt01MultND')
         j02MD = cmds.createNode('multiplyDivide', name=ctrlName + '_jnt01MultND')
 
-        cmds.connectAttr(ReverseMD + '.outputX', j01MD + '.input1X')
+#        cmds.connectAttr(ReverseMD + '.outputX', j01MD + '.input1X')
         cmds.connectAttr(blender + '.outputR', j01MD + '.input2X')
         cmds.connectAttr(j01MD + '.outputX', sels[-2] + '.translateX')
 
-        cmds.connectAttr(ReverseMD + '.outputY', j02MD + '.input1X')
+#        cmds.connectAttr(ReverseMD + '.outputY', j02MD + '.input1X')
         cmds.connectAttr(blender + '.outputR', j02MD + '.input2X')
         cmds.connectAttr(j02MD + '.outputX', jnt02 + '.translateX')
 
@@ -134,37 +145,47 @@ class StretchyIkUI():
         jnt01 = sels[-2]
         jnt02 = sels[-1]
 
+# -- Creates a locator, matches transforms with the IK Control, and parents it to the control. Then gets the shape node    
         loc01 = cmds.spaceLocator(name=ctrlName + '_loc01')
         cmds.matchTransform(loc01, sels[1])
         cmds.parentConstraint(sels[1], loc01)
         loc01Shape = cmds.listRelatives(loc01, s=True)[0]
-
+# -- Creates a locator, matches transforms with the First Joint, and parents it to the Joint. Then gets the shape node
         loc02 = cmds.spaceLocator(name=ctrlName + '_loc02')
         cmds.matchTransform(loc02, sels[2])
         cmds.parentConstraint(sels[2], loc02)
         loc02Shape = cmds.listRelatives(loc02, s=True)[0]
 
-        # Attributes for the Transform_ctrl, It check if this already exists
+# Attributes for the Transform_ctrl, It check if this already exists
         if not cmds.attributeQuery('globalScale', node=sels[0], ex=True):
             cmds.select(sels[0])
             globalScale = cmds.addAttr(shortName=('globalScale'), longName=('globalScale'), k=True, minValue=0.0,
-                                       defaultValue=1.0)
+                                   defaultValue=1.0)
 
-        # Attributes for the IK_ctrl
-        cmds.select(sels[1])  # Add 3 attributes to the Transform CTRL
-        Length01 = cmds.addAttr(shortName='length01', longName='length01', k=True, minValue=0.0, defaultValue=1.0)
-        Length02 = cmds.addAttr(shortName='length02', longName='length02', k=True, minValue=0.0, defaultValue=1.0)
-        stretchy = cmds.addAttr(shortName='stretchy', longName='stretchy', k=True, minValue=0.0, maxValue=1.0, defaultValue=1.0)
+# Attributes for the IK_ctrl. It Checks if they already exist, and then creates 3 attributes on the IK_CTRL
+        if not cmds.attributeQuery('length01', node=sels[1], ex=True):
+            cmds.select(sels[1])
+            Length01 = cmds.addAttr(shortName=('length01'), longName=('length01'), k=True, minValue=0.0, defaultValue=1.0)
 
+        if not cmds.attributeQuery('length02', node=sels[1], ex=True):
+            cmds.select(sels[1])
+            Length02 = cmds.addAttr(shortName=('length02'), longName=('length02'), k=True, minValue=0.0, defaultValue=1.0)
+
+        if not cmds.attributeQuery('stretchy', node=sels[1], ex=True):
+            cmds.select(sels[1])
+            stretchy = cmds.addAttr(shortName=('stretchy'), longName=('stretchy'), k=True, minValue=0.0, maxValue=1.0, defaultValue=1.0)
+
+# -- Creates the IK handle and parents it under the IK_Ctrl
         cmds.ikHandle(name=ctrlName + '_IKHandle', sj=sels[-3], ee=sels[-1], solver='ikRPsolver')
-
         cmds.parent((ctrlName + '_IKHandle'), sels[1])
-        # -- Now that we have all of the pieces, lets set up the nodes
+# ---------------------------------------------------------------------------------------------------
+# -- Now that we have all of the pieces, lets set up the nodes
 
+# -- Creates a DistanceBetween node and plugs the two locators into it
         DistND = cmds.createNode('distanceBetween', name=ctrlName + '_DistND')
-
         cmds.connectAttr(loc01Shape + '.worldPosition[0]', DistND + '.point1')
         cmds.connectAttr(loc02Shape + '.worldPosition[0]', DistND + '.point2')
+
 
         ScalerND = cmds.createNode('multiplyDivide', name=ctrlName + '_ScalerND')
         cmds.setAttr(ScalerND + '.operation', 2)
@@ -179,6 +200,7 @@ class StretchyIkUI():
 
         length01MD = cmds.createNode('multiplyDivide', name=ctrlName + '_length01MD')
         length02MD = cmds.createNode('multiplyDivide', name=ctrlName + '_length02MD')
+
         LengthPMA = cmds.createNode('plusMinusAverage', name=ctrlName + '_LengthPMA')
 
         lenX = cmds.getAttr(sels[-2] + '.translateX')
