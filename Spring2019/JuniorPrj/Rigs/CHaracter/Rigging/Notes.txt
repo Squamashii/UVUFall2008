@@ -4,3 +4,7 @@ Things To double check
 - Make sure IK chain joints only have X-Trans and Z-Rot
 - Pole Vector ctrl grp is same transform as knee/elbow jnt then "Object" translated out
 - 
+
+
+Digital Tutors: BlendShape-Based Facial Rigging in Maya 
+https://www.bilibili.com/video/av10465292/?p=2
