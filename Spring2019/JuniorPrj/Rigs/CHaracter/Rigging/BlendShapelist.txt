@@ -16,19 +16,19 @@ __BrowOut 	__L and __R
 /_Smile		/_L and /_R	"Smile_New" is the base, with an extreme at "smile"(50)/"Wide"(50)   
 /_Frown		/_L and /_R
 
-__Sneer		__L and __R
-/_CheekPuff	__L and __R
+/_Sneer		/_L and /_R
+/_CheekPuff	/_L and /_R
 
 /_CheekDraw	__L and __R
-__EarUp		__L and __R
-__EarDown	__L and __R (using negative values)
+/_EarUp		/_L and /_R
+/_EarDown	/_L and /_R (using negative values)
 
 
-__LipsUp	__U and __D   
+/_LipsUp	/_U and /_D   
 
-__LipsDn	__U and __D
-__LipsLeft
-__LipsRight
+/_LipsDn	/_U and /_D
+/_LipsLeft
+/_LipsRight
 /_LipsPursed
 /_LowLip_Pooch : Go up beyond 100% 150 could be a good extreme
 
